@@ -399,6 +399,7 @@ html,body,a{
 	margin: 0 auto;
 	position: fixed;
 	bottom: 0;
+	background-color: #fbfbfb;
 }
 
 .menu__home {
