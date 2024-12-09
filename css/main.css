@@ -52,14 +52,14 @@ html,body,a{
 	left: 40px;
 }
 
-.boarding__title::before{
+.boarding__column::before{
 	position: absolute;
 	content: url('../img/boarding/document.svg');
-	top: 70px;
+	top: 40px;
 	left: 169px;
 }
 
-.boarding__title::after{
+.boarding__column::after{
 	position: absolute;
 	content: url('../img/boarding/media.svg');
 	top: 21px;
@@ -80,7 +80,7 @@ html,body,a{
 	color: white;
 	line-height: 150%;
 	text-align: center;
-	margin-top: 46px;
+	margin-top: 4px;
 	width: 247px;
 }
 
@@ -88,7 +88,7 @@ html,body,a{
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 150%;
-	margin-top: 16px;
+	margin-top: 4px;
 	text-align: center;
 	width: 315px;
 	color: white;
@@ -419,3 +419,31 @@ html,body,a{
 	width: 32px;
 	height: 32px;
 }
+
+#text-container {  
+	text-align: center;  
+	font-size: 24px;  
+	color: white;  
+	transition: opacity 1s ease-in-out; 
+	display: block; 
+	height: 190px;
+} 
+
+.visible {  
+	opacity: 100%;
+	display: block;
+}  
+
+.hidden {  
+	opacity: 0%;  
+	display: block;
+}  
+
+.header {  
+	font-size: 28px;
+	font-weight: bold; 
+}  
+
+.text {  
+	font-size: 16px; 
+}  
