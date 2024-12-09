@@ -38,7 +38,7 @@ html,body,a{
 	position: relative;
 }
 
-.after__elemnts::before{
+/* .after__elemnts::before{
 	position: absolute;
 	content: url('../img/boarding/img.svg');
 	top: 152px;
@@ -50,7 +50,7 @@ html,body,a{
 	content: url('../img/boarding/music.svg');
 	top: 101px;
 	left: 40px;
-}
+} */
 
 .boarding__column::before{
 	position: absolute;
@@ -70,7 +70,7 @@ html,body,a{
 	width: 209px;
 	height: 192px;
 	object-fit: cover;
-	margin-top: 211px;
+	margin-top: 100px;
 	z-index: 1;
 }
 
