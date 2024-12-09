@@ -400,6 +400,8 @@ html,body,a{
 	position: fixed;
 	bottom: 0;
 	background-color: #fbfbfb;
+	z-index: 100
+	;
 }
 
 .menu__home {
