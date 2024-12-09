@@ -38,32 +38,18 @@ html,body,a{
 	position: relative;
 }
 
-/* .after__elemnts::before{
+.after__elemnts::before{
 	position: absolute;
 	content: url('../img/boarding/img.svg');
-	top: 152px;
+	top: 60px;
 	left: 130px;
 }
 
 .after__elemnts::after{
 	position: absolute;
 	content: url('../img/boarding/music.svg');
-	top: 101px;
+	top: 15px;
 	left: 40px;
-} */
-
-.boarding__column::before{
-	position: absolute;
-	content: url('../img/boarding/document.svg');
-	top: 40px;
-	left: 169px;
-}
-
-.boarding__column::after{
-	position: absolute;
-	content: url('../img/boarding/media.svg');
-	top: 21px;
-	left: 100px;
 }
 
 .boarding__img {
