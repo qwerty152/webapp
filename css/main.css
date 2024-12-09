@@ -349,6 +349,7 @@ html,body,a{
 	background-color: white;
 	padding: 8px 12px;
 	align-items: center;
+	margin-bottom: 100px;
 }
 
 .home__file-img {
