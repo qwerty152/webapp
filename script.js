@@ -1,9 +1,15 @@
-document.getElementById('home').style.display = 'none'; 
+document.addEventListener('DOMContentLoaded', function() {
+	// Начальное состояние: показываем boarding
+	document.getElementById('boarding').classList.add('active');
 
-document.getElementById('boarding__btn').addEventListener('click', function() {  
-	document.getElementById('boarding').style.display = 'none';  
-	document.getElementById('home').style.display = 'block';  
-});  
+	// Обработчик события для кнопки
+	document.getElementById('boarding__btn').addEventListener('click', function() {
+		 // Убираем класс active у boarding и добавляем его к home
+		 document.getElementById('boarding').classList.remove('active');
+		 document.getElementById('home').classList.add('active');
+	});
+});
+
 
 const texts = [  
 	"<span class='header'>Ваши файлы всегда в безопасности!</span> 🔒☁️<br><span class='text'>Продвинутое шифрование и современные технологии защиты – полный контроль и полная конфиденциальность ваших данных.</span>",  
@@ -33,4 +39,4 @@ function changeText() {
 }  
 
 changeText(); // Начальный вызов для отображения первого текста  
-setInterval(changeText, 4000); // Менять текст каждые 4 секунды (2 секунды видимости + 2 секунды растворения)  
+setInterval(changeText, 4000); // Менять текст каждые 4 секунды (2 секунды видимости + 2 секунды растворения)  ы
