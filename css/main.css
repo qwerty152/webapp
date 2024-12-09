@@ -104,17 +104,19 @@ html,body,a{
 	box-shadow: 0 0 5px pink;
 	width: 70px;
 }
+
 section {
-	visibility: hidden; /* Скрываем секции по умолчанию */
-	height: 0; /* Высота 0 для скрытия */
 	opacity: 0; /* Начальная непрозрачность */
-	transition: opacity 0.5s ease, height 0.5s ease; /* Плавный переход */
+	transition: opacity 0.5s ease; /* Плавный переход */
+	pointer-events: none; /* Отключаем взаимодействие, когда неактивен */
+	height: 0; /* Начальная высота */
+	overflow: hidden; /* Скрываем переполнение */
 }
 
 section.active {
-	visibility: visible; /* Делаем видимыми */
-	height: auto; /* Автоматическая высота */
 	opacity: 1; /* Непрозрачность 1 */
+	pointer-events: auto; /* Включаем взаимодействие, когда активен */
+	height: auto; /* Высота автоматически подстраивается */
 }
 
 			/* HOME */
@@ -192,7 +194,7 @@ section.active {
 	text-align: center;
 	position: absolute;
 	line-height: 80%;
-	top: 275px;
+	top: 240px;
 	left: 42.5%;
 }
 
