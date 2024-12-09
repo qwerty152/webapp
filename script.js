@@ -1,15 +1,42 @@
-document.addEventListener('DOMContentLoaded', function() {
-	// Начальное состояние: показываем boarding
-	document.getElementById('boarding').classList.add('active');
+// document.addEventListener('DOMContentLoaded', function() {
+// 	// Начальное состояние: показываем boarding
+// 	document.getElementById('boarding').classList.add('active');
 
-	// Обработчик события для кнопки
+// 	// Обработчик события для кнопки
+// 	document.getElementById('boarding__btn').addEventListener('click', function() {
+// 		 // Убираем класс active у boarding и добавляем его к home
+// 		 document.getElementById('boarding').classList.remove('active');
+// 		 document.getElementById('home').classList.add('active');
+// 	});
+// });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+	const boardingSection = document.getElementById('boarding');
+	const homeSection = document.getElementById('home');
+
+	// Функция для переключения секций
+	function toggleSections(activeSection, inactiveSection) {
+		 inactiveSection.style.display = 'none'; // Скрываем неактивную секцию
+		 activeSection.style.display = 'block'; // Показываем активную секцию
+
+		 // Используем setTimeout для плавного перехода
+		 setTimeout(() => {
+			  inactiveSection.classList.remove('active');
+			  activeSection.classList.add('active');
+		 }, 10); // Небольшая задержка для применения стилей
+	}
+
+	// Обработчик события для кнопки "Go to Home"
 	document.getElementById('boarding__btn').addEventListener('click', function() {
-		 // Убираем класс active у boarding и добавляем его к home
-		 document.getElementById('boarding').classList.remove('active');
-		 document.getElementById('home').classList.add('active');
+		 toggleSections(homeSection, boardingSection);
+	});
+
+	// Обработчик события для кнопки "Go to Boarding"
+	document.getElementById('home__btn').addEventListener('click', function() {
+		 toggleSections(boardingSection, homeSection);
 	});
 });
-
 
 const texts = [  
 	"<span class='header'>Ваши файлы всегда в безопасности!</span> 🔒☁️<br><span class='text'>Продвинутое шифрование и современные технологии защиты – полный контроль и полная конфиденциальность ваших данных.</span>",  
