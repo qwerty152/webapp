@@ -27,7 +27,7 @@ html,body,a{
 .boarding {
 	background: linear-gradient(162deg, rgba(157,121,255,1) 14%, rgba(119,71,253,1) 91%);
 	transition: transform 0.5s ease;  
-	
+	display: block;
 }
 
 .boarding__column {
@@ -140,6 +140,7 @@ section.active {
 	padding-top: 25px;
 	background-color: #fbfbfb;
 	padding-bottom: 90px;
+	display: none;
 }
 
 .home__column {
@@ -160,7 +161,7 @@ section.active {
 	letter-spacing: 1%;
 }
 
-.home__search {
+.search {
 	width: 36px;
 	height: 36px;
 	display: flex;
@@ -207,10 +208,11 @@ section.active {
 	font-size: 32px;
 	color: #7747FD; 
 	text-align: center;
-	position: absolute;
+	/* position: absolute; */
 	line-height: 80%;
-	top: 240px;
-	left: 42.5%;
+	/* top: 240px;
+	left: 42.5%; */
+	margin-top: -150px;
 }
 
 .home__circle-text-regular{
@@ -221,7 +223,7 @@ section.active {
 }
 
 .home__category {
-	margin-top: 8px;
+	margin-top: 101px;
 	font-weight: 600;
 	font-size: 20px;
 	color: black;
@@ -387,6 +389,7 @@ section.active {
 	font-size: 12px;
 	line-height: 150%;
 	color: black;
+	width: 128px;
 }
 
 .home__file-name-subtitle {
@@ -414,8 +417,7 @@ section.active {
 	position: fixed;
 	bottom: 0;
 	background-color: #fbfbfb;
-	z-index: 100
-	;
+	z-index: 100;
 }
 
 .menu__home {
@@ -460,3 +462,94 @@ section.active {
 .text {  
 	font-size: 16px; 
 }  
+
+.menu_icon {  
+	width: 30px; /* Начальный размер иконок */  
+	transition: transform 0.3s ease; /* Плавное изменение размера */  
+}  
+
+
+
+.menu__content{
+	display: none;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-top: none;
+	opacity: 0;  
+	transition: opacity 0.5s ease, transform 0.5s ease; /* Плавность изменения */
+}
+
+.menu__content.active {  
+	display: block; /* Показываем элемент */  
+	opacity: 1; /* Устанавливаем непрозрачность для анимации */  
+}  
+
+
+
+		/* Files */
+
+
+.files {
+	padding-top: 25px;
+	background-color: #fbfbfb;
+	padding-bottom: 90px;
+}
+
+.files__content {
+	display: flex;
+	flex-direction: column;
+}
+
+.files__top-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.files__top-title {
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 150%;
+	letter-spacing: 1%;
+	color: black;
+}
+
+.search {
+
+}	
+
+.files__column {
+	display: flex;
+	flex-direction: column;
+}
+
+.file__file {
+	width: 311px;
+	height: 68px;
+	border-radius: 16px;
+	margin-top: 20px;
+	display: flex;
+	background-color: white;
+	padding: 8px 12px;
+	align-items: center;
+}
+
+.files-img {
+	margin-top: 20px;
+}
+
+.btn__plus {
+	width: 56px;
+	aspect-ratio: 1;
+	background: linear-gradient(162deg, rgba(157,121,255,1) 14%, rgba(119,71,253,1) 91%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 80px;
+	right: 25px;
+}
+
+.btn__plus-img {
+}
