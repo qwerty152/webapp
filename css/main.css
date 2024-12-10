@@ -472,7 +472,6 @@ section.active {
 
 .menu__content{
 	display: none;
-	padding: 6px 12px;
 	border: 1px solid #ccc;
 	border-top: none;
 	opacity: 0;  
@@ -504,6 +503,8 @@ section.active {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	width: 311px;
+	margin: 0 auto;
 }
 
 .files__top-title {
@@ -552,4 +553,173 @@ section.active {
 }
 
 .btn__plus-img {
+}
+
+			/* CLOUD */
+
+.cloud {
+	background-color: #fbfbfb;
+	padding-top: 20px;
+}
+
+.cloud__content {
+	display: flex;
+	flex-direction: column;
+}
+
+
+.cloud__storage {
+	width: 311px;
+	height: 150px;
+	background: linear-gradient(162deg, rgba(157,121,255,1) 14%, rgba(119,71,253,1) 91%);
+	border-radius: 20px;
+	margin: 0 auto;
+	margin-top: 32px;
+
+}
+
+.cloud__storage-column {
+display: flex;
+flex-direction: column;
+}
+
+.cloud__storage-row {
+	display: flex;
+}
+
+.cloud__storage-row-img {
+	margin: 19px 0 0 18px;
+}
+
+.cloud__storage-text {
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+	margin-left: 17px;
+}
+
+.cloud__storage-text-title {
+	font-weight: 500;
+	font-size: 18px;
+	color: white;
+	position: relative;
+}
+
+.cloud__storage-text-title::after{
+	content: url('../img/cloud/luchi.svg');
+	position: absolute;
+	top: -10px;
+	left: -60px;
+}
+
+.cloud__storage-text-title-regular{
+	font-weight: 400;
+	font-size: 14px;
+	color: #e1e1e1;
+}
+
+
+.cloud__storage-text-subtitle {
+	font-weight: 400;
+	font-size: 12px;
+	color: white;
+	margin-top: 8px;
+}
+
+.cloud__storage-column-subtitle {
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 150%;
+	color: white;
+	margin-top: 12px;
+	margin-left: 25px;
+	margin-bottom: 8px;
+}
+
+.cloud__storage-column-img {
+	
+	margin: 0 auto;
+	
+}
+
+.cloud__up {
+	display: flex;
+	width: 318px;
+	height: 74px;
+	background-color: #f3f3f3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	margin: 0 auto;
+	margin-top: 36px;
+}
+
+.cloud__up-img {
+
+}
+
+.cloud__up-text {
+	font-weight: 400;
+	font-size: 12px;
+	color: #707070;
+	margin-left: 12px;
+}
+
+.cloud__up-text-regular{
+	font-weight: 500;
+	font-size: 14px;
+	color: black;
+}
+
+.cloud__up-btn {
+	width: 86px;
+	height: 28px;
+	border-radius: 20px;
+	margin-left: 38px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-weight: 700;
+	font-size: 12px;
+	background:  linear-gradient(135deg, rgba(253,168,254,1) 22%, rgba(252,105,255,1) 80%);
+}
+
+.cloud__files {
+	background-color: white;
+	width: 146px;
+	height: 150px;
+	padding-left: 16px;
+	border-radius: 20px;
+	margin: 0 auto;
+	margin-top: 26px; 
+}
+
+.cloud__files-wrap{
+	display: flex;
+	flex-wrap: wrap;
+	gap:19px;
+	margin: 0 auto;
+	margin-bottom: 100px;
+}
+
+.cloud__files-img {
+	margin: 16px 0 0 -10px;
+}
+
+.cloud__files-name {
+	font-weight: 700;
+	font-size: 14px;
+	color: black;
+	margin-top: -20px;
+}
+
+.cloud__files-name-regular{
+	font-weight: 400;
+	font-size: 12px;
+	color: #707070;
+}
+.cloud__files-img-avatar {
+	margin-top: 16px;
 }
