@@ -78,9 +78,9 @@
 			</div>
 		</div>
 		<div class="menu">
-			<button class="menu__btn" onclick="openCity(event, 'home')"><img src="./img/menu/home.svg" alt="" class="menu__home"></button>
+			<button class="menu__btn" onclick="openCity(event, 'home')"><img src="./img/menu/home__active.svg" alt="" class="menu__home"></button>
 			<button class="menu__btn"onclick="openCity(event, 'files')"><img src="./img/menu/file.svg" alt="" class="menu__file"></button>
-			<button class="menu__btn" onclick="openCity(event, 'cloud')"><img src="./img/menu/cloud.svg" alt="" class="menu__cloud"></button>
+			<button class="menu__btn" onclick="openCity(event, 'cloud')"><img src="./img/menu/cloud__norm.svg" alt="" class="menu__cloud"></button>
 		</div>
 	</section>
 	<section id="files" class="files menu__content">
@@ -171,11 +171,74 @@
 		</div>
 		<div class="menu">
 			<button class="menu__btn" onclick="openCity(event, 'home')"><img src="./img/menu/home.svg" alt="" class="menu__home"></button>
-			<button class="menu__btn"onclick="openCity(event, 'files')"><img src="./img/menu/file.svg" alt="" class="menu__file"></button>
-			<button class="menu__btn" onclick="openCity(event, 'cloud')"><img src="./img/menu/cloud.svg" alt="" class="menu__cloud"></button>
+			<button class="menu__btn"onclick="openCity(event, 'files')"><img src="./img/menu/folder__active.svg" alt="" class="menu__file"></button>
+			<button class="menu__btn" onclick="openCity(event, 'cloud')"><img src="./img/menu/cloud__norm.svg" alt="" class="menu__cloud"></button>
 		</div>
 	</section>
-	<section id="cloud" class="cloud menu__content"></section>
+	<section id="cloud" class="cloud menu__content">
+		<div class="coantainer">
+			<div class="cloud__content">
+				<div class="files__top-row">
+					<p class="files__top-title">My Folders &#9996;</p>
+					<div class="search">
+						<img src="./img/home/search.svg"alt=""class="home__top-row-img">
+					</div>
+				</div>
+				<div class="cloud__storage">
+					<div class="cloud__storage-column">
+						<div class="cloud__storage-row">
+							<img src="./img/cloud/cloud.svg" alt="" class="cloud__storage-row-img">
+							<div class="cloud__storage-text">
+								<h3 class="cloud__storage-text-title">Cloud Storages <br><span class="cloud__storage-text-title-regular">5126 Files</span></h3>
+								<p class="cloud__storage-text-subtitle">Sync active</p>
+							</div>
+						</div>
+						<p class="cloud__storage-column-subtitle">485 GB of 2 TB used</p>
+						<img src="./img/cloud/bar.svg" alt="" class="cloud__storage-column-img">
+					</div>
+				</div>
+				<div class="cloud__up">
+					<div class="cloud__up-img">
+						<img src="./img/cloud/arrow__up.svg" alt="">
+					</div>
+					<p class="cloud__up-text"> Unlimited storage<br> <span class="cloud__up-text-regular">Rp. 150.000 / mo</span></p>
+					<div class="cloud__up-btn">
+						Upgrade
+					</div>
+				</div>
+				<div class="cloud__files-wrap">
+					<div class="cloud__files">
+						<img src="./img/cloud/folder.svg" alt="" class="cloud__files-img">
+						<p class="cloud__files-name">Research <br><span class="cloud__files-name-regular">78 items</span></p>
+						<img src="./img/cloud/avatar2.svg" alt="" class="cloud__files-img-avatar">
+					</div>
+					<div class="cloud__files">
+						<img src="./img/cloud/folder.svg" alt="" class="cloud__files-img">
+						<p class="cloud__files-name">Research <br><span class="cloud__files-name-regular">78 items</span></p>
+						<img src="./img/cloud/avatar2.svg" alt="" class="cloud__files-img-avatar">
+					</div>
+					<div class="cloud__files">
+						<img src="./img/cloud/folder.svg" alt="" class="cloud__files-img">
+						<p class="cloud__files-name">Research <br><span class="cloud__files-name-regular">78 items</span></p>
+						<img src="./img/cloud/avatar2.svg" alt="" class="cloud__files-img-avatar">
+					</div>
+					<div class="cloud__files">
+						<img src="./img/cloud/folder.svg" alt="" class="cloud__files-img">
+						<p class="cloud__files-name">Research <br><span class="cloud__files-name-regular">78 items</span></p>
+						<img src="./img/cloud/avatar2.svg" alt="" class="cloud__files-img-avatar">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btn__plus">
+			<img src="./img/files/plus.svg" alt="" class="btn__plus-img">
+		</div>
+		<div class="menu">
+			<button class="menu__btn" onclick="openCity(event, 'home')"><img src="./img/menu/home.svg" alt="" class="menu__home"></button>
+			<button class="menu__btn"onclick="openCity(event, 'files')"><img src="./img/menu/folder__active.svg" alt="" class="menu__file"></button>
+			<button class="menu__btn" onclick="openCity(event, 'cloud')"><img src="./img/menu/cloud__norm.svg" alt="" class="menu__cloud"></button>
+		</div>
+	</section>
 	<script src="script.js" defer></script>
 </body>
 </html>
