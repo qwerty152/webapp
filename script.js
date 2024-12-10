@@ -1,41 +1,69 @@
-// document.addEventListener('DOMContentLoaded', function() {
-// 	// Начальное состояние: показываем boarding
-// 	document.getElementById('boarding').classList.add('active');
 
-// 	// Обработчик события для кнопки
-// 	document.getElementById('boarding__btn').addEventListener('click', function() {
-// 		 // Убираем класс active у boarding и добавляем его к home
-// 		 document.getElementById('boarding').classList.remove('active');
-// 		 document.getElementById('home').classList.add('active');
-// 	});
-// });
+function openCity(evt, cityName) {  
+	var i, tabcontent, tablinks;  
+	tabcontent = document.getElementsByClassName("menu__content");  
 
+	// Скрываем все вкладки  
+	for (i = 0; i < tabcontent.length; i++) {  
+		 tabcontent[i].classList.remove("active"); 
+		 tabcontent[i].style.display = "none"; 
+	}  
+
+	// Удаляем класс 'active' у всех кнопок  
+	tablinks = document.getElementsByClassName("menu__btn");  
+	for (i = 0; i < tablinks.length; i++) {  
+		 tablinks[i].classList.remove("active");  
+	}  
+
+	
+	var currentTab = document.getElementById(cityName);  
+	if (currentTab) {   
+		 currentTab.style.display = "block";
+		 setTimeout(() => {  
+			  currentTab.classList.add("active"); 
+		 }, 10); 
+	}  
+ 
+	evt.currentTarget.classList.add("active");  
+}
+
+
+function showSection(sectionId) { 
+	const sections = document.querySelectorAll('.section'); 
+	sections.forEach(section => { 
+		section.classList.remove('active'); }); 
+		const activeSection = document.getElementById(sectionId); 
+		activeSection.classList.add('active');
+	}
 
 document.addEventListener('DOMContentLoaded', function() {
 	const boardingSection = document.getElementById('boarding');
 	const homeSection = document.getElementById('home');
+	const filesSection = document.getElementById('files');
+	
 
-	// Функция для переключения секций
+	
 	function toggleSections(activeSection, inactiveSection) {
-		 inactiveSection.style.display = 'none'; // Скрываем неактивную секцию
-		 activeSection.style.display = 'block'; // Показываем активную секцию
+		 inactiveSection.style.display = 'none'; 
+		 activeSection.style.display = 'block'; 
 
-		 // Используем setTimeout для плавного перехода
+		 
 		 setTimeout(() => {
 			  inactiveSection.classList.remove('active');
 			  activeSection.classList.add('active');
-		 }, 10); // Небольшая задержка для применения стилей
+		 }, 10); 
 	}
 
-	// Обработчик события для кнопки "Go to Home"
+	
 	document.getElementById('boarding__btn').addEventListener('click', function() {
 		 toggleSections(homeSection, boardingSection);
 	});
 
-	// Обработчик события для кнопки "Go to Boarding"
+	
 	document.getElementById('home__btn').addEventListener('click', function() {
 		 toggleSections(boardingSection, homeSection);
 	});
+
 });
 
 const texts = [  
@@ -51,19 +79,16 @@ let index = 0;
 function changeText() {  
 	const container = document.getElementById('text-container');  
 
-	// Начать исчезновение  
 	container.classList.remove('visible');  
 	container.classList.add('hidden');  
 
 	setTimeout(() => {  
-		 // Изменить текст после исчезновения  
 		 container.innerHTML = texts[index];  
-		 // Начать проявление  
 		 container.classList.remove('hidden');  
 		 container.classList.add('visible');  
-		 index = (index + 1) % texts.length; // Вернуться к началу  
-	}, 1000); // Задержка, соответствующая времени исчезновения  
+		 index = (index + 1) % texts.length; 
+	}, 1000); 
 }  
 
-changeText(); // Начальный вызов для отображения первого текста  
-setInterval(changeText, 4000); // Менять текст каждые 4 секунды (2 секунды видимости + 2 секунды растворения)  ы
+changeText();  
+setInterval(changeText, 4000); 

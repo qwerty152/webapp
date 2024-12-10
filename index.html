@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<section id="boarding" class="boarding active ">
+	<section id="boarding" class="boarding active">
 		<div class="container">
 			<div class="boarding__column">
 				<div class="after__elemnts">
@@ -18,16 +18,16 @@
 				<p class="boarding__title">Manage your files in a simple way</p>
 				<p class="boarding__subtitle">You could integrate your local files with the files in cloud storage</p>
 			</div>
-				<button id="boarding__btn" class="boarding__btn"><img src="./img/boarding/btn__arrow.svg" alt=""></button>
+				<button id="boarding__btn" class="boarding__btn " ><img src="./img/boarding/btn__arrow.svg" alt=""></button>
 			</div>
 		</div>
 	</section>
-	<section id="home" class="home ">
+	<section id="home" class="home menu__content">
 		<div class="container">
 			<div class="home__column">
 				<div class="home__top-row">
 					<h2 class="home__top-row-title">Good morning <br> Rendy</h2>
-					<div class="home__search">
+					<div class="search">
 						<img src="./img/home/search.svg" alt="" class="home__top-row-img">
 					</div>
 				</div>
@@ -78,11 +78,104 @@
 			</div>
 		</div>
 		<div class="menu">
-			<img src="./img/menu/home.svg" alt="" class="menu__home">
-			<img src="./img/menu/file.svg" alt="" class="menu__file">
-			<img src="./img/menu/cloud.svg" alt="" class="menu__cloud">
+			<button class="menu__btn" onclick="openCity(event, 'home')"><img src="./img/menu/home.svg" alt="" class="menu__home"></button>
+			<button class="menu__btn"onclick="openCity(event, 'files')"><img src="./img/menu/file.svg" alt="" class="menu__file"></button>
+			<button class="menu__btn" onclick="openCity(event, 'cloud')"><img src="./img/menu/cloud.svg" alt="" class="menu__cloud"></button>
 		</div>
 	</section>
-	<script src="script.js"></script>
+	<section id="files" class="files menu__content">
+		<div class="container">
+			<div class="files__content">
+				<div class="files__top-row">
+					<p class="files__top-title">My Folders &#128077;</p>
+					<div class="search">
+						<img src="./img/home/search.svg" alt="" class="home__top-row-img">
+					</div>
+				</div>
+				<div class="files__column">
+					<div class="file__file">
+						<div class="files-img">
+							<img src="./img/files/folder.svg" alt="" >
+						</div>
+						<div class="home__file-name">
+							<p class="home__file-name-title">E - Book</p>
+							<p class="home__file-name-subtitle">49 items  | 421 MB</p>
+						</div>
+						<img src="./img/home/tritochki.svg" alt="" class="home__file-tritochki file-tritochki">
+					</div>
+					<div class="file__file">
+						<div class="files-img">
+							<img src="./img/files/folder.svg" alt="">
+						</div>
+						<div class="home__file-name">
+							<p class="home__file-name-title">Freelance</p>
+							<p class="home__file-name-subtitle">286 items  | 2.8 GB</p>
+						</div>
+						<img src="./img/home/tritochki.svg" alt="" class="home__file-tritochki file-tritochki">
+					</div>
+					<div class="file__file">
+						<div class="files-img">
+							<img src="./img/files/folder.svg" alt="">
+						</div>
+						<div class="home__file-name">
+							<p class="home__file-name-title">Competitive Analysis. xls</p>
+							<p class="home__file-name-subtitle">2.6 MB</p>
+						</div>
+						<img src="./img/home/tritochki.svg" alt="" class="home__file-tritochki file-tritochki">
+					</div>
+					<div class="file__file">
+						<div class="files-img">
+							<img src="./img/files/folder.svg" alt="">
+						</div>
+						<div class="home__file-name">
+							<p class="home__file-name-title">Content Plan</p>
+							<p class="home__file-name-subtitle">52 items  | 84 MB</p>
+						</div>
+						<img src="./img/home/tritochki.svg" alt="" class="home__file-tritochki file-tritochki">
+					</div>
+					<div class="file__file">
+						<div class="files-img">
+							<img src="./img/files/folder.svg" alt="">
+						</div>
+						<div class="home__file-name">
+							<p class="home__file-name-title">Bootcamp</p>
+							<p class="home__file-name-subtitle">109 items  | 4.6 GB</p>
+						</div>
+						<img src="./img/home/tritochki.svg" alt="" class="home__file-tritochki file-tritochki">
+					</div>
+					<div class="file__file">
+						<div class="files-img">
+							<img src="./img/files/folder.svg" alt="">
+						</div>
+						<div class="home__file-name">
+							<p class="home__file-name-title">Research</p>
+							<p class="home__file-name-subtitle">76 items  | 1.5 GB</p>
+						</div>
+						<img src="./img/home/tritochki.svg" alt="" class="home__file-tritochki file-tritochki">
+					</div>
+					<div class="file__file">
+						<div class="files-img">
+							<img src="./img/files/folder.svg" alt="">
+						</div>
+						<div class="home__file-name">
+							<p class="home__file-name-title">Design Exploration</p>
+							<p class="home__file-name-subtitle">43 items  | 8.3 GB</p>
+						</div>
+						<img src="./img/home/tritochki.svg" alt="" class="home__file-tritochki file-tritochki">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btn__plus">
+			<img src="./img/files/plus.svg" alt="" class="btn__plus-img">
+		</div>
+		<div class="menu">
+			<button class="menu__btn" onclick="openCity(event, 'home')"><img src="./img/menu/home.svg" alt="" class="menu__home"></button>
+			<button class="menu__btn"onclick="openCity(event, 'files')"><img src="./img/menu/file.svg" alt="" class="menu__file"></button>
+			<button class="menu__btn" onclick="openCity(event, 'cloud')"><img src="./img/menu/cloud.svg" alt="" class="menu__cloud"></button>
+		</div>
+	</section>
+	<section id="cloud" class="cloud menu__content"></section>
+	<script src="script.js" defer></script>
 </body>
 </html>
