@@ -491,7 +491,7 @@ section.active {
 .files {
 	padding-top: 25px;
 	background-color: #fbfbfb;
-	padding-bottom: 90px;
+	padding-bottom: 60px;
 }
 
 .files__content {
@@ -560,6 +560,7 @@ section.active {
 .cloud {
 	background-color: #fbfbfb;
 	padding-top: 20px;
+	padding-bottom: 70px;
 }
 
 .cloud__content {
