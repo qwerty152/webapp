@@ -139,7 +139,7 @@ section.active {
 .home {
 	padding-top: 25px;
 	background-color: #fbfbfb;
-	padding-bottom: 90px;
+	padding-bottom: 75px;
 	display: none;
 }
 
@@ -360,7 +360,7 @@ section.active {
 	width: 311px;
 	height: 68px;
 	border-radius: 16px;
-	margin-top: 20px;
+	margin-top: 5px;
 	display: flex;
 	background-color: white;
 	padding: 8px 12px;
@@ -692,16 +692,18 @@ flex-direction: column;
 	height: 150px;
 	padding-left: 16px;
 	border-radius: 20px;
-	margin: 0 auto;
 	margin-top: 26px; 
+	margin-right: 0;
+	margin-left: 0;
 }
 
 .cloud__files-wrap{
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 	gap:19px;
 	margin: 0 auto;
-	margin-bottom: 100px;
+	margin-bottom: 100Zpx;
 }
 
 .cloud__files-img {
