@@ -418,6 +418,10 @@ section.active {
 	bottom: 0;
 	background-color: #fbfbfb;
 	z-index: 100;
+	opacity: 0; /* Начальная непрозрачность */  
+	transition: opacity 0.3s ease; /* Плавная анимация */  
+	display: none;
+	/* display: none; */
 }
 
 .menu__home {
@@ -464,8 +468,8 @@ section.active {
 }  
 
 .menu_icon {  
-	width: 30px; /* Начальный размер иконок */  
-	transition: transform 0.3s ease; /* Плавное изменение размера */  
+	width: 30px; 
+	transition: transform 0.3s ease; 
 }  
 
 
@@ -475,15 +479,31 @@ section.active {
 	border: 1px solid #ccc;
 	border-top: none;
 	opacity: 0;  
-	transition: opacity 0.5s ease, transform 0.5s ease; /* Плавность изменения */
+	transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .menu__content.active {  
-	display: block; /* Показываем элемент */  
-	opacity: 1; /* Устанавливаем непрозрачность для анимации */  
+	display: block; 
+	opacity: 1; 
 }  
 
+.menu__btn{
+	transition: transform 0.2s ease;
+}
 
+.menu.active{
+	display: flex;
+	opacity: 1;
+}
+
+.active__btn{
+	transform: scale(1.2);
+}
+
+.menu.show {  
+	opacity: 1; /* Полная непрозрачность при показе */  
+	display: flex; /* Показываем элемент */  
+}  
 
 		/* Files */
 
