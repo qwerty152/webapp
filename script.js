@@ -1,4 +1,16 @@
 
+
+
+const icons = document.querySelectorAll('.menu__btn');  
+icons.forEach(icon => {  
+    icon.addEventListener('click', () => {  
+        // Убираем активный класс со всех иконок  
+        icons.forEach(i => i.classList.remove('active__btn'));  
+        // Добавляем активный класс к кликнутой иконке  
+        icon.classList.add('active__btn');  
+    });  
+});  
+
 function openCity(evt, cityName) {  
 	var i, tabcontent, tablinks;  
 	tabcontent = document.getElementsByClassName("menu__content");  
@@ -24,7 +36,7 @@ function openCity(evt, cityName) {
 		 }, 10); 
 	}  
  
-	evt.currentTarget.classList.add("active");  
+	evt.currentTarget.classList.add("active ");  
 }
 
 
@@ -39,7 +51,7 @@ function showSection(sectionId) {
 document.addEventListener('DOMContentLoaded', function() {
 	const boardingSection = document.getElementById('boarding');
 	const homeSection = document.getElementById('home');
-	const filesSection = document.getElementById('files');
+	const menuSection = document.getElementById('menu');
 	
 
 	
@@ -56,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	
 	document.getElementById('boarding__btn').addEventListener('click', function() {
-		 toggleSections(homeSection, boardingSection);
+		 toggleSections(homeSection, boardingSection, menuSection);
 	});
 
 	
@@ -65,6 +77,27 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 
 });
+
+
+const toggleButton = document.getElementById('boarding__btn');  
+const menu = document.getElementById('menu');  
+
+toggleButton.addEventListener('click', () => {  
+    if (menu.classList.contains('show')) {  
+        menu.style.transition = 'none'; // Отключаем анимацию для мгновенного скрытия  
+        menu.classList.remove('show'); // Убираем класс, чтобы скрыть меню  
+        // Используем setTimeout, чтобы дождаться завершения предыдущей анимации  
+        setTimeout(() => {  
+            menu.style.display = 'none'; // Скрываем меню после анимации  
+        }, 300); // Время соответствует продолжительности анимации  
+    } else {  
+        menu.style.display = 'flex'; // Показываем меню немедленно  
+        // Небольшая задержка для правильного отображения анимации  
+        setTimeout(() => {  
+            menu.classList.add('show'); // Добавляем класс для анимации  
+        }, 10); // Небольшая задержка для того, чтобы браузер обработал новый display  
+    }  
+});  
 
 const texts = [  
 	"<span class='header'>Ваши файлы всегда в безопасности!</span> 🔒☁️<br><span class='text'>Продвинутое шифрование и современные технологии защиты – полный контроль и полная конфиденциальность ваших данных.</span>",  
