@@ -8,6 +8,7 @@ html,body,a{
 	padding: 0;
 	overflow-x: hidden;
 	box-sizing: border-box;
+	background-color: white;
 }
 
 * {
@@ -177,6 +178,14 @@ section.active {
 }
 
 #home__title{
+	opacity: 0;  
+	transition: opacity 0.5s ease;
+}
+#home__title2{
+	opacity: 0;  
+	transition: opacity 0.5s ease;
+}
+#home__title3{
 	opacity: 0;  
 	transition: opacity 0.5s ease;
 }
