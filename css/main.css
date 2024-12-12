@@ -149,9 +149,19 @@ section.active {
 }
 
 .home__top-row {
+	padding-top: 15px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	width:100%;
+	padding-left :20px;
+	height: 80px;
+	position: fixed;
+	top: 0;
+	background-color: #fbfbfb 0.5;
+	backdrop-filter: blur(7px);
+	z-index: 50;
+	margin-left: -20px;
 }
 
 .home__top-row-title {
@@ -159,6 +169,11 @@ section.active {
 	font-size: 24px;
 	line-height: 150%;
 	letter-spacing: 1%;
+}
+
+#home__title{
+	opacity: 0;  
+	transition: opacity 0.5s ease;
 }
 
 .search {
@@ -172,7 +187,7 @@ section.active {
 }
 
 .home__first-storage {
-	margin-top: 32px;
+	margin-top: 52px;
 	font-size: 16px;
 	font-weight: 800;
 	color: black;
@@ -410,17 +425,20 @@ section.active {
 	width: 100%;
 	height: 78px;
 	display: flex;
-	gap: 60px;
+	gap: 28px;
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
 	position: fixed;
 	bottom: 0;
-	background-color: #fbfbfb;
+	background-color: #fbfbfb 0.5;
+	backdrop-filter: blur(7px);
 	z-index: 100;
 	opacity: 0; /* Начальная непрозрачность */  
 	transition: opacity 0.3s ease; /* Плавная анимация */  
 	display: none;
+	
+	opacity: 0.7;
 	/* display: none; */
 }
 
@@ -474,6 +492,7 @@ section.active {
 
 
 
+
 .menu__content{
 	display: none;
 	border: 1px solid #ccc;
@@ -498,6 +517,7 @@ section.active {
 
 .active__btn{
 	transform: scale(1.2);
+	filter: invert(30%) sepia(35%) saturate(6880%) hue-rotate(245deg) brightness(101%) contrast(98%);
 }
 
 .menu.show {  
@@ -521,10 +541,15 @@ section.active {
 
 .files__top-row {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	width: 311px;
+	width: 100%;
+	height: 50px;
 	margin: 0 auto;
+	position: fixed;
+	top: 0;
+	margin-left: 20px;
+	background-color: #fbfbfb 0.5;
+	backdrop-filter: blur(7px);
 }
 
 .files__top-title {
@@ -536,7 +561,7 @@ section.active {
 }
 
 .search {
-
+	margin-right: 30px;
 }	
 
 .files__column {
@@ -560,16 +585,14 @@ section.active {
 }
 
 .btn__plus {
-	width: 56px;
+	width: 35px;
 	aspect-ratio: 1;
 	background: linear-gradient(162deg, rgba(157,121,255,1) 14%, rgba(119,71,253,1) 91%);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 50%;
-	position: absolute;
-	bottom: 80px;
-	right: 25px;
+
 }
 
 .btn__plus-img {
@@ -705,6 +728,15 @@ flex-direction: column;
 	font-weight: 700;
 	font-size: 12px;
 	background:  linear-gradient(135deg, rgba(253,168,254,1) 22%, rgba(252,105,255,1) 80%);
+	transition-duration: 0.2s;
+}
+
+.cloud__up-btn:hover{
+	box-shadow: #7747FD 0px 0px 10px;
+}
+
+.cloud__up-btn:active{
+	transform: scale(0.9);
 }
 
 .cloud__files {
