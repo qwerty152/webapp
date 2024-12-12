@@ -18,7 +18,7 @@ html,body,a{
 
 .container{
 	width: 311px;
-	height: 100vh;
+	/* height: 100vh; */
 	margin: 0 auto;
 }
 
@@ -36,6 +36,7 @@ html,body,a{
 	align-items: center;
 	position: relative;
 	height: auto;
+	height: 100vh;
 }
 
 .boarding__column::after{
@@ -141,6 +142,7 @@ section.active {
 	background-color: #fbfbfb;
 	padding-bottom: 75px;
 	display: none;
+	height: 100vh;
 }
 
 .home__column {
@@ -148,20 +150,23 @@ section.active {
 	flex-direction: column;
 }
 
+.cloud__content .home__top-row{
+	padding-left: 30px;
+} 
+
 .home__top-row {
 	padding-top: 15px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	width:100%;
-	padding-left :20px;
 	height: 80px;
 	position: fixed;
 	top: 0;
 	-webkit-backdrop-filter: blur(7px);
 	backdrop-filter: blur(7px);
 	z-index: 50;
-	margin-left: -20px;
+	margin-left: -5px	
 }
 
 .home__top-row-title {
@@ -437,7 +442,8 @@ section.active {
 	opacity: 0; /* Начальная непрозрачность */  
 	transition: opacity 0.3s ease; /* Плавная анимация */  
 	display: none;
-	
+	-webkit-backdrop-filter: blur(7px);
+	backdrop-filter: blur(7px);
 	opacity: 0.7;
 	/* display: none; */
 }
@@ -531,7 +537,7 @@ section.active {
 .files {
 	padding-top: 25px;
 	background-color: #fbfbfb;
-	padding-bottom: 60px;
+	padding-bottom: 80px;
 }
 
 .files__content {
@@ -567,6 +573,7 @@ section.active {
 .files__column {
 	display: flex;
 	flex-direction: column;
+	margin-top: 50px;
 }
 
 .file__file {
@@ -618,7 +625,7 @@ section.active {
 	background: linear-gradient(162deg, rgba(157,121,255,1) 14%, rgba(119,71,253,1) 91%);
 	border-radius: 20px;
 	margin: 0 auto;
-	margin-top: 32px;
+	margin-top: 72px;
 
 }
 
@@ -756,7 +763,7 @@ flex-direction: column;
 	justify-content: center;
 	gap:19px;
 	margin: 0 auto;
-	margin-bottom: 70px;
+	margin-bottom: 10px;
 }
 
 .cloud__files-img {
