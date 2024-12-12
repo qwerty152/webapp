@@ -1,3 +1,56 @@
+const phrases = [  
+	"I am light ✨",  
+	"I feel joy 🎉",  
+	"Love guides me ❤️",  
+	"I am free 🦋",  
+	"Peace fills me 🕊️",  
+	"I trust life 🙏",  
+	"I am worthy 💪",  
+	"Happiness surrounds me 😊",  
+	"I grow strong 🚀",  
+	"I shine bright 🌟",  
+	"Love flows endlessly 💞",  
+	"I embrace now 🌊",  
+	"My soul soars ✈️",  
+	"Strength is mine 💪",  
+	"Life is kind 🌸",  
+	"I choose love ❤️",  
+	"I create magic 🎩",  
+	"Gratitude finds me 🙏",  
+	"Dreams come true 🌙",  
+	"I radiate calm 🌊",  
+	"Light flows within ☀️",  
+	"My heart expands 💖",  
+	"Beauty is everywhere 🌍",  
+	"Energy lifts me 🔥",  
+	"I welcome miracles ✨",  
+	"I deserve peace 😌",  
+	"My soul glows 🌟",  
+	"Truth leads me 🦅",  
+	"I am infinite 🌌",  
+	"Love lives here ❤️",  
+	"My spirit dances 🎶",  
+	"Joy lifts everything 🎊",  
+	"I breathe harmony 🌿",  
+	"My journey flows 🏞️",  
+	"I am limitless ✨"  
+];  
+
+function changePhrase() {  
+	const phraseElement = document.getElementById("home__title");  
+	phraseElement.style.opacity = 0; // Скрываем текст  
+
+	setTimeout(() => {  
+		 const randomIndex = Math.floor(Math.random() * phrases.length);  
+		 phraseElement.textContent = phrases[randomIndex];  
+		 phraseElement.style.opacity = 1; // Плавно показываем текст  
+	}, 500); // Время ожидания для скрытия текста  
+}  
+
+setInterval(changePhrase, 2000);  
+changePhrase();
+
+
 
 
 

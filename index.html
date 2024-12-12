@@ -26,7 +26,7 @@
 		<div class="container">
 			<div class="home__column">
 				<div class="home__top-row">
-					<h2 class="home__top-row-title">Good morning <br> Rendy</h2>
+					<h2 class="home__top-row-title" id="home__title">Good morning <br> Rendy</h2>
 					<div class="search">
 						<img src="./img/home/search.svg" alt="" class="home__top-row-img">
 					</div>
@@ -77,11 +77,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div class="menu">
-			<button class="menu__btn" onclick="openCity(event, 'home')"><img src="./img/menu/home__active.svg" alt="" class="menu__home"></button>
-			<button class="menu__btn"onclick="openCity(event, 'files')"><img src="./img/menu/file.svg" alt="" class="menu__file"></button>
-			<button class="menu__btn" onclick="openCity(event, 'cloud')"><img src="./img/menu/cloud__norm.svg" alt="" class="menu__cloud"></button>
-		</div> -->
 	</section>
 	<section id="files" class="files menu__content">
 		<div class="container">
@@ -166,14 +161,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="btn__plus">
-			<img src="./img/files/plus.svg" alt="" class="btn__plus-img">
-		</div>
-		<!-- <div class="menu">
-			<button class="menu__btn" onclick="openCity(event, 'home')"><img src="./img/menu/home.svg" alt="" class="menu__home"></button>
-			<button class="menu__btn"onclick="openCity(event, 'files')"><img src="./img/menu/folder__active.svg" alt="" class="menu__file"></button>
-			<button class="menu__btn" onclick="openCity(event, 'cloud')"><img src="./img/menu/cloud__norm.svg" alt="" class="menu__cloud"></button>
-		</div> -->
 	</section>
 	<section id="cloud" class="cloud menu__content">
 		<div class="coantainer">
@@ -230,19 +217,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="btn__plus">
-			<img src="./img/files/plus.svg" alt="" class="btn__plus-img">
-		</div>
-		<!-- <div class="menu">
-			<button class="menu__btn" onclick="openCity(event, 'home')"><img src="./img/menu/home.svg" alt="" class="menu__home"></button>
-			<button class="menu__btn"onclick="openCity(event, 'files')"><img src="./img/menu/folder__active.svg" alt="" class="menu__file"></button>
-			<button class="menu__btn" onclick="openCity(event, 'cloud')"><img src="./img/menu/cloud__norm.svg" alt="" class="menu__cloud"></button>
-		</div> -->
 	</section>
 	<div class="menu" id="menu">
 		<button class="menu__btn active__btn" onclick="openCity(event, 'home')"><img src="./img/menu/home.svg" alt="" ></button>
-		<button class="menu__btn"onclick="openCity(event, 'files')"><img src="./img/menu/file.svg" alt="" ></button>
-		<button class="menu__btn" onclick="openCity(event, 'cloud')"><img src="./img/menu/cloud.png" alt="" ></button>
+		<button class="menu__btn"onclick="openCity(event, 'files')"><img src="./img/menu/cloud.svg" alt="" ></button>
+		<div class="btn__plus">
+			<img src="./img/files/plus.svg" alt="" class="btn__plus-img">
+		</div>
+		<button class="menu__btn" ><img src="./img/menu/img.svg" alt="" ></button>
+		<button class="menu__btn" onclick="openCity(event, 'cloud')"><img src="./img/menu/planet.svg" alt="" ></button>
 	</div>
 	<script src="script.js" defer></script>
 </body>
