@@ -878,7 +878,7 @@ flex-direction: column;
 	transition: 0.5s all;
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
-
+	background-color: rgb(251 251 251 0.5);
 	display: block;
 }
 
