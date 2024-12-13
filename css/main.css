@@ -114,6 +114,11 @@ html,body,a{
 	top: -25px;
 }
 
+.boarding__btn::before:active{
+	transform: scale(0.9);
+
+}
+
 .boarding__btn:active{
 	box-shadow: 0 0 5px pink;
 	width: 70px;
@@ -152,7 +157,6 @@ section.active {
 }
 
 .cloud__content .home__top-row{
-	padding-left: 30px;
 } 
 
 .home__top-row {
@@ -165,9 +169,17 @@ section.active {
 	position: fixed;
 	top: 0;
 	-webkit-backdrop-filter: blur(7px);
-	backdrop-filter: blur(7px);
+	backdrop-filter: blur(18px);
+	background-color: rgb(251 251 251 0.5);
 	z-index: 50;
-	margin-left: -5px	
+	left: 0;
+}
+
+.home__top-row-text{
+	display: flex;
+	justify-content: space-between;
+	width: 311px;
+	margin: 0 auto;
 }
 
 .home__top-row-title {
@@ -198,6 +210,11 @@ section.active {
 	justify-content: center;
 	border-radius: 10px;
 	border: #404040 solid 0.5px;
+	transition: 0.3s ease;
+}
+
+.search:active{
+	transform: scale(0.9);
 }
 
 .home__first-storage {
@@ -484,11 +501,13 @@ section.active {
 .visible {  
 	opacity: 100%;
 	display: block;
+	transition: opacity 0.3s ease;
 }  
 
 .hidden {  
 	opacity: 0%;  
 	display: block;
+	transition: opacity 0.3s ease;
 }  
 
 .header {  
@@ -532,12 +551,34 @@ section.active {
 
 .active__btn{
 	transform: scale(1.2);
+	transition: 0.3s ease;
 	filter: invert(30%) sepia(35%) saturate(6880%) hue-rotate(245deg) brightness(101%) contrast(98%);
 }
 
 .menu.show {  
 	opacity: 1; /* Полная непрозрачность при показе */  
 	display: flex; /* Показываем элемент */  
+}  
+
+
+.search-input {  
+	display: none;  
+	transition: opacity 0.3s ease-in-out;  
+	margin-bottom: 10px;  
+	
+	font-size: 18px;
+}  
+
+.hidden {  
+	display: none;
+	opacity: 0;  
+	transition: opacity 0.3s ease-in-out;  
+}  
+
+.visible {  
+	display: block;
+	opacity: 1;  
+	transition: opacity 0.3s ease-in-out;  
 }  
 
 		/* Files */
@@ -576,7 +617,7 @@ section.active {
 }
 
 .search {
-	margin-right: 100px;
+	/* margin-right: 100px; */
 }	
 
 .files__column {
