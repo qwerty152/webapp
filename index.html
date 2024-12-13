@@ -199,10 +199,10 @@
 					<div class="cloud__up-img">
 						<img src="./img/cloud/arrow__up.svg" alt="">
 					</div>
-					<p class="cloud__up-text"> Unlimited storage<br> <span class="cloud__up-text-regular">Rp. 150.000 / mo</span></p>
-					<div class="cloud__up-btn">
+					<p class="cloud__up-text"> Unlimited storage<br> <span class="cloud__up-text-regular" id="storage-text">+ 1 GB = 0.15 USDT/mo</span></p>
+					<button class="cloud__up-btn" id="upgrade-button">
 						Upgrade
-					</div>
+					</button>
 				</div>
 				<div class="cloud__files-wrap">
 					<div class="cloud__files">
@@ -232,11 +232,17 @@
 	<div class="menu" id="menu">
 		<button class="menu__btn active__btn" onclick="openCity(event, 'home')"><img src="./img/menu/home.svg" alt="" ></button>
 		<button class="menu__btn"onclick="openCity(event, 'files')"><img src="./img/menu/cloud.svg" alt="" ></button>
-		<div class="btn__plus">
+		<button class="btn__plus" id="btn__plus">
 			<img src="./img/files/plus.svg" alt="" class="btn__plus-img">
-		</div>
+		</button>
 		<button class="menu__btn" ><img src="./img/menu/img.svg" alt="" ></button>
 		<button class="menu__btn" onclick="openCity(event, 'cloud')"><img src="./img/menu/planet.svg" alt="" ></button>
+	</div>
+	<div class="popup__bg">
+		<div class="popup">
+			<div class="popup__first-text">Gallery 📸 </div>
+			<div class="popup__second-text">FILE 📁 </div>
+		</div>
 	</div>
 	<script src="script.js" ></script>
 </body>
