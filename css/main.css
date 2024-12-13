@@ -843,8 +843,8 @@ flex-direction: column;
 
 
 .popup__bg {
-	backdrop-filter: blur(0px);
 	-webkit-backdrop-filter: blur(0px);
+	backdrop-filter: blur(0px);
 	background: rgba(255, 255, 255, 0.5);
 	position: fixed;
 	top: 0;
@@ -879,8 +879,8 @@ flex-direction: column;
 	opacity: 1; 
 	pointer-events: all; 
 	transition: 0.5s all;
-	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
 	display: block;
 }
 
