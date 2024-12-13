@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	function toggleSections(activeSection, inactiveSection) {
 		 inactiveSection.style.display = 'none'; 
-		 activeSection.style.display = 'block'; 
+		 activeSection.style.display = 'flex'; 
 
 		 
 		 setTimeout(() => {
@@ -102,11 +102,11 @@ toggleButton.addEventListener('click', () => {
 });  
 
 const texts = [  
-	"<span class='header'>Ваши файлы всегда в безопасности!</span> 🔒☁️<br><span class='text'>Продвинутое шифрование и современные технологии защиты – полный контроль и полная конфиденциальность ваших данных.</span>",  
-	"<span class='header'>Ускоренная работа с вашими файлами!</span> ⚡📂<br><span class='text'>Мгновенная загрузка и доступ из любой точки мира – больше никаких ожиданий.</span>",  
-	"<span class='header'>Доступно в любое время и в любом месте!</span> 📱💻<br><span class='text'>Бесшовная интеграция со всеми вашими устройствами и приложениями – ваши файлы всегда под рукой, даже в оффлайн.</span>",  
-	"<span class='header'>Хранение, которому можно доверять!</span> 🛡️<br><span class='text'>Трехуровневая система защиты гарантирует безопасность ваших файлов, независимо от обстоятельств.</span>",  
-	"<span class='header'>Работайте без ограничений!</span> 🌍<br><span class='text'>Синхронизация в реальном времени между всеми вашими устройствами – идеально для работы, учебы или личного пользования.</span>"  
+	"<span class='header'>Your files are always secure! 🔒☁️<br><span class='text'>Advanced encryption and cutting-edge protection technologies – full control and complete confidentiality for your data.  </span>",  
+	"<span class='header'>Blazing speed for your files! ⚡📂</span> <br><span class='text'>Instant uploads and access from anywhere in the world – no more waiting around. </span>",  
+	"<span class='header'> Accessible anytime, anywhere! 📱💻</span> <br><span class='text'>Seamless integration with all your devices and apps – your files are always within reach, even offline. </span>",  
+	"<span class='header'>Storage you can trust</span> 🛡️<br><span class='text'>A triple-layer protection system ensures your files stay safe, no matter what. .</span>",  
+	"<span class='header'>Work without limits!</span> 🌍<br><span class='text'>Real-time synchronization across all your devices – perfect for work, study, or personal use.</span>"  
 ];  
 
 let index = 0;  
@@ -137,7 +137,6 @@ const phrases = [
 	"Peace fills me 🕊️",  
 	"I trust life 🙏",  
 	"I am worthy 💪",  
-	"Happiness surrounds me 😊",  
 	"I grow strong 🚀",  
 	"I shine bright 🌟",  
 	"Love flows endlessly 💞",  
@@ -152,7 +151,6 @@ const phrases = [
 	"I radiate calm 🌊",  
 	"Light flows within ☀️",  
 	"My heart expands 💖",  
-	"Beauty is everywhere 🌍",  
 	"Energy lifts me 🔥",  
 	"I welcome miracles ✨",  
 	"I deserve peace 😌",  
@@ -189,4 +187,63 @@ function changePhrases() {
 
 setInterval(changePhrases, 2000);  
 changePhrases();
+
+
+// SEARCH
+
+document.getElementById('searchButton').addEventListener('click', function() {  
+	const header = document.getElementById('home__title');  
+	const section = document.getElementById('searchInput');  
+	const searchInput = document.getElementById('searchInput');  
+
+	if (header.classList.contains('hidden')) {  
+		 header.classList.remove('hidden');  
+		 section.classList.remove('hidden');  
+		 searchInput.style.display = 'none';  
+		 setTimeout(() => { searchInput.style.display = 'none'; }, 300); // Скрываем уже после анимации  
+	} else {  
+		 header.classList.add('hidden');  
+		 section.classList.add('hidden');  
+		 searchInput.style.display = 'block';  
+		 setTimeout(() => { searchInput.classList.add('visible'); }, 10); // Показываем с задержкой для анимации  
+	}  
+});
+
+document.getElementById('searchButton2').addEventListener('click', function() {  
+	const header2 = document.getElementById('home__title2');  
+	const section2 = document.getElementById('searchInput2');  
+	const searchInput2 = document.getElementById('searchInput2');  
+
+	if (header2.classList.contains('hidden')) {  
+		 header2.classList.remove('hidden');  
+		 section2.classList.remove('hidden');  
+		 searchInput2.style.display = 'none';  
+		 setTimeout(() => { searchInput2.style.display = 'none'; }, 300); // Скрываем уже после анимации  
+	} else {  
+		 header2.classList.add('hidden');  
+		 section2.classList.add('hidden');  
+		 searchInput2.style.display = 'block';  
+		 setTimeout(() => { searchInput2.classList.add('visible'); }, 10); // Показываем с задержкой для анимации  
+	}  
+});
+
+
+document.getElementById('searchButton3').addEventListener('click', function() {  
+	const header3 = document.getElementById('home__title3');  
+	const section3 = document.getElementById('searchInput3');  
+	const searchInput3 = document.getElementById('searchInput3');  
+
+	if (header3.classList.contains('hidden')) {  
+		 header3.classList.remove('hidden');  
+		 section3.classList.remove('hidden');  
+		 searchInput3.style.display = 'none';  
+		 setTimeout(() => { searchInput3.style.display = 'none'; }, 300); // Скрываем уже после анимации  
+	} else {  
+		 header3.classList.add('hidden');  
+		 section3.classList.add('hidden');  
+		 searchInput3.style.display = 'block';  
+		 setTimeout(() => { searchInput3.classList.add('visible'); }, 10); // Показываем с задержкой для анимации  
+	}  
+});
+
 
