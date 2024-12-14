@@ -364,9 +364,12 @@ section.active {
 	flex-direction: column;
 	width: 64px;
 	aspect-ratio: 1;
-	background-color: #F9ECF5;
 	border-radius: 16px;
 	transition: 0.3s ease-in-out;
+}	
+
+.home__row-video-img img{
+	
 }	
 
 .home__row-video-name{
