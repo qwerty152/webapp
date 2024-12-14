@@ -293,3 +293,100 @@ document.getElementById('upgrade-button').addEventListener('click', () => {
 	currentPlanIndex = (currentPlanIndex + 1) % plans.length; // Циклический переход  
 	document.getElementById('storage-text').innerText = `${plans[currentPlanIndex].size} = ${plans[currentPlanIndex].price}`;  
 }); 
+
+
+
+// CATEGORY
+
+function openCategory(evt, categoryName) {
+	// Declare all variables
+	var i, categoryContent, buttonCategory;
+
+	// Get all elements with class="tabcontent" and hide them
+	categoryContent = document.getElementsByClassName("category__content");
+	for (i = 0; i < categoryContent.length; i++) {
+		categoryContent[i].style.display = "none";
+	}
+
+	// Get all elements with class="tablinks" and remove the class "active"
+	buttonCategory = document.getElementsByClassName("button-category");
+	for (i = 0; i < buttonCategory.length; i++) {
+		buttonCategory[i].className = buttonCategory[i].className.replace(" category__btn-active", "");
+	}
+
+	// Show the current tab, and add an "active" class to the link that opened the tab
+	document.getElementById(categoryName).style.display = "block";
+	evt.currentTarget.className += " category__btn-active";
+}
+
+// POPUP CATEGORY
+ 
+let popupBgCt = document.querySelector('.popup__bg-category'); // Фон попап окна
+let popupCt = document.querySelector('.popup-category'); // Само окно
+let openPopupButtonsCt = document.querySelectorAll('.btn__tritochki'); // Кнопки для показа окна
+let closePopupButtonCt = document.getElementById('btn__tritochki'); // Кнопка для скрытия окна
+let windowHome = document.querySelectorAll('.home');
+
+openPopupButtonsCt.forEach((button) => { // Перебираем все кнопки
+	button.addEventListener('click', (e) => { // Для каждой вешаем обработчик событий на клик
+		 e.preventDefault(); // Предотвращаем дефолтное поведение браузера
+		 popupBgCt.classList.toggle('active'); // Добавляем класс 'active' для фона
+		//  popup.classList.add('active'); // И для самого окна
+	})
+});
+
+document.addEventListener('click', (e) => { // Вешаем обработчик на весь документ
+	if(e.target ===cc ) { // Если цель клика - фот, то:
+		 popupBg.classList.remove('active'); // Убираем активный класс с фона
+		//  popup.classList.remove('active'); // И с окна
+	}
+});
+
+
+// POPUP CATEGORY2
+ 
+let popupBgCt2 = document.querySelector('.popup__bg-category2'); // Фон попап окна
+let popupCt2 = document.querySelector('.popup-category2'); // Само окно
+let openPopupButtonsCt2 = document.querySelectorAll('.btn__tritochki2'); // Кнопки для показа окна
+let closePopupButtonCt2 = document.getElementById('btn__tritochki2'); // Кнопка для скрытия окна
+
+openPopupButtonsCt2.forEach((button) => { // Перебираем все кнопки
+	button.addEventListener('click', (e) => { // Для каждой вешаем обработчик событий на клик
+		 e.preventDefault(); // Предотвращаем дефолтное поведение браузера
+		 popupBgCt2.classList.toggle('active'); // Добавляем класс 'active' для фона
+		//  popup.classList.add('active'); // И для самого окна
+	})
+});
+
+// POPUP CATEGORY3
+ 
+let popupBgCt3 = document.querySelector('.popup__bg-category3'); // Фон попап окна
+let popupCt3 = document.querySelector('.popup-category3'); // Само окно
+let openPopupButtonsCt3 = document.querySelectorAll('.btn__tritochki3'); // Кнопки для показа окна
+let closePopupButtonCt3 = document.getElementById('btn__tritochki3'); // Кнопка для скрытия окна
+
+openPopupButtonsCt3.forEach((button) => { // Перебираем все кнопки
+	button.addEventListener('click', (e) => { // Для каждой вешаем обработчик событий на клик
+		 e.preventDefault(); // Предотвращаем дефолтное поведение браузера
+		 popupBgCt3.classList.toggle('active'); // Добавляем класс 'active' для фона
+		//  popup.classList.add('active'); // И для самого окна
+	})
+});
+// POPUP CATEGORY4
+ 
+let popupBgCt4 = document.querySelector('.popup__bg-category4'); // Фон попап окна
+let popupCt4 = document.querySelector('.popup-category4'); // Само окно
+let openPopupButtonsCt4 = document.querySelectorAll('.btn__tritochki4'); // Кнопки для показа окна
+let closePopupButtonCt4 = document.getElementById('btn__tritochki4'); // Кнопка для скрытия окна
+
+openPopupButtonsCt4.forEach((button) => { // Перебираем все кнопки
+	button.addEventListener('click', (e) => { // Для каждой вешаем обработчик событий на клик
+		 e.preventDefault(); // Предотвращаем дефолтное поведение браузера
+		 popupBgCt4.classList.toggle('active'); // Добавляем класс 'active' для фона
+		//  popup.classList.add('active'); // И для самого окна
+	})
+});
+
+
+
+

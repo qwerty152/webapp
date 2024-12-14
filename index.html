@@ -43,31 +43,32 @@
 				<p class="home__category">Category</p>
 					<div class="home__row-icons">
 						<div class="home__row-docs">
-							<div class="home__row-docs-img" >
+							<button class="home__row-docs-img button-category" onclick="openCategory(event, 'docs')">
 								<img src="./img/home/docs.svg" alt="" width="28" height="28" class="docs__img">
-							</div>
+							</button>
 							<p class="home__row-docs-name">Docs</p>
 						</div>
 						<div class="home__row-img">
-							<div class="home__row-img-img">
+							<button class="home__row-img-img button-category" onclick="openCategory(event, 'img-category')">
 								<img src="./img/home/img.svg" alt="">
-							</div>
+							</button>
 							<p class="home__row-img-name">Images</p>
 						</div>
 						<div class="home__row-video">
-							<div class="home__row-video-img">
+							<button class="home__row-video-img button-category" onclick="openCategory(event, 'videos')">
 								<img src="./img/home/video.svg" alt="">
-							</div>
+							</button>
 							<p class="home__row-video-name">Videos</p>
 						</div>
 						<div class="home__row-music">
-							<div class="home__row-music-img">
+							<button class="home__row-music-img button-category" onclick="openCategory(event, 'music')">
 								<img src="./img/home/music.svg" alt="">
-							</div>
+							</button>
 							<p class="home__row-music-name">Music</p>
 						</div>
 					</div>
 				<p class="home__recent">Recent</p>
+				<div class="docs category__content" id="docs" style="display: block;">
 				<div class="home__file">
 					<div class="home__file-img">
 						<img src="./img/home/file.svg" alt="">
@@ -76,9 +77,98 @@
 						<p class="home__file-name-title">Competitive Analysis. xls</p>
 						<p class="home__file-name-subtitle">2.6 MB</p>
 					</div>
-					<img src="./img/home/tritochki.svg" alt="" class="home__file-tritochki">
+					<div class="popup__bg-category" >
+						<div class="popup-category">
+							<div class="popup-category-first-text"> Edit</div>
+							<div class="popup-category-second-text"> Share</div>
+							<div class="popup-category-third-text"> Copy link</div>
+							<div class="popup-category-fourty-text">Delete</div>
+						</div>
+					</div>
+					<button class="btn__tritochki" id="btn__tritochki"  onclick="toggleMenu(event)">
+						<img src="./img/home/tritochki.svg" alt="" class="home__file-tritochki">
+					</button>
 				</div>
-			</div>
+				<div class="home__file">
+					<div class="home__file-img">
+						<img src="./img/home/file.svg" alt="">
+					</div>
+					<div class="home__file-name">
+						<p class="home__file-name-title">nice. xls</p>
+						<p class="home__file-name-subtitle">2.82 GB</p>
+					</div>
+					<div class="popup__bg-category2" >
+						<div class="popup-category">
+							<div class="popup-category-first-text"> Edit</div>
+							<div class="popup-category-second-text"> Share</div>
+							<div class="popup-category-third-text"> Copy link</div>
+							<div class="popup-category-fourty-text">Delete</div>
+						</div>
+					</div>
+					<button class="btn__tritochki2" id="btn__tritochki2">
+						<img src="./img/home/tritochki.svg" alt="" class="home__file-tritochki">
+					</button>
+				</div>
+				<div class="home__file">
+					<div class="home__file-img">
+						<img src="./img/home/file.svg" alt="">
+					</div>
+					<div class="home__file-name">
+						<p class="home__file-name-title">Analysis. xls</p>
+						<p class="home__file-name-subtitle">2.61 MB</p>
+					</div>
+					<div class="popup__bg-category3" >
+						<div class="popup-category">
+							<div class="popup-category-first-text"> Edit</div>
+							<div class="popup-category-second-text"> Share</div>
+							<div class="popup-category-third-text"> Copy link</div>
+							<div class="popup-category-fourty-text">Delete</div>
+						</div>
+					</div>
+					<button class="btn__tritochki3" id="btn__tritochki3">
+						<img src="./img/home/tritochki.svg" alt="" class="home__file-tritochki">
+					</button>
+				</div>
+				<div class="home__file">
+					<div class="home__file-img">
+						<img src="./img/home/file.svg" alt="">
+					</div>
+					<div class="home__file-name">
+						<p class="home__file-name-title"> Geo. xls</p>
+						<p class="home__file-name-subtitle">256 KB</p>
+					</div>
+					<div class="popup__bg-category4" >
+						<div class="popup-category">
+							<div class="popup-category-first-text"> Edit</div>
+							<div class="popup-category-second-text"> Share</div>
+							<div class="popup-category-third-text"> Copy link</div>
+							<div class="popup-category-fourty-text">Delete</div>
+						</div>
+					</div>
+					<button class="btn__tritochki4" id="btn__tritochki4">
+						<img src="./img/home/tritochki.svg" alt="" class="home__file-tritochki">
+					</button>
+				</div>
+				</div>
+				<div class="img-category category__content" id="img-category">
+					<div class="img-category-content">
+						<img src="./img/home/category/img-category1.jpg" alt="">
+						<img src="./img/home/category/img-category2.jpg" alt="">
+						<img src="./img/home/category/img-category3.jpg" alt="">
+						<img src="./img/home/category/img-category4.jpg" alt="">
+					</div>
+				</div>
+				<div class="videos category__content" id="videos">
+					<div class="img-category-content">
+						Nothing...
+					</div>
+				</div>
+				<div class="music category__content" id="music">	
+					<div class="img-category-content">
+						Nothing...
+					</div>
+				</div>
+		</div>
 		</div>
 	</section>
 	<section id="files" class="files menu__content">
@@ -244,6 +334,7 @@
 			<div class="popup__second-text">FILE 📁 </div>
 		</div>
 	</div>
+	
 	<script src="script.js" ></script>
 </body>
 </html>
