@@ -160,7 +160,6 @@ section.active {
 } 
 
 .home__top-row {
-	padding-top: 15px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -274,6 +273,9 @@ section.active {
 	font-size: 20px;
 	color: black;
 	line-height: 150%;
+	position: sticky;
+	top: 100px;
+	;
 }
 
 .home__row-icons {
@@ -283,6 +285,8 @@ section.active {
 	border-radius: 16px;
 	align-items: center;
 	justify-content: center;
+	position: sticky;
+	top: 100px;
 }
 
 .home__row-docs {	
@@ -300,6 +304,7 @@ section.active {
 	aspect-ratio: 1;
 	background-color: #ECF9ED;
 	border-radius: 16px;
+	transition: 0.3s ease-in-out;
 }
 
 .docs__img{
@@ -332,6 +337,7 @@ section.active {
 	aspect-ratio: 1;
 	background-color: #ECF3F9;
 	border-radius: 16px;
+	transition: 0.3s ease-in-out;
 }
 
 .home__row-img-name{
@@ -357,6 +363,7 @@ section.active {
 	aspect-ratio: 1;
 	background-color: #F9ECF5;
 	border-radius: 16px;
+	transition: 0.3s ease-in-out;
 }	
 
 .home__row-video-name{
@@ -383,6 +390,7 @@ section.active {
 	aspect-ratio: 1;
 	background-color: #F9F4EC;
 	border-radius: 16px;
+	transition: 0.3s ease-in-out;
 }
 
 .home__row-music-name{
@@ -402,6 +410,19 @@ section.active {
 	color: black;
 }
 
+.docs{
+	display: block;
+}
+
+
+.img-category-content{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	margin-top: 10px;
+	margin-bottom: 300px;
+}
+
 .home__file {
 	width: 311px;
 	height: 68px;
@@ -411,6 +432,10 @@ section.active {
 	background-color: white;
 	padding: 8px 12px;
 	align-items: center;
+}
+
+.home__file:last-child{
+	margin-bottom: 100px;
 }
 
 .home__file-img {
@@ -435,7 +460,7 @@ section.active {
 	font-size: 12px;
 	line-height: 150%;
 	color: black;
-	width: 128px;
+	width: 148px;
 }
 
 .home__file-name-subtitle {
@@ -901,4 +926,168 @@ flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	background-color: white;
+}
+
+
+/* CATWGORY */
+
+
+.category {
+	display: block;
+	height: 100%;
+	width: 100vh;
+}
+
+.category__content{
+
+}
+
+.img-category {
+	display: none;
+}
+
+.videos{
+	display: none;
+}
+
+.music{
+	display: none;
+}
+
+.category__btn-active{
+	transform: scale(1.2);
+	transition: 0.3 all;
+}
+
+.popup__bg-category {
+display: none;
+}
+
+.popup__bg-category2{
+	display: none;
+}
+.popup__bg-category3{
+	display: none;
+}
+.popup__bg-category4{
+	display: none;
+}
+
+.popup__bg-category.active { 
+	opacity: 1; 
+	pointer-events: all; 
+	transition: 0.5s all;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	background-color: rgb(251 251 251 0.5);
+	display: block;
+}
+
+.popup__bg-category2.active {
+	opacity: 1; 
+	pointer-events: all; 
+	transition: 0.5s all;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	background-color: rgb(251 251 251 0.5);
+	display: block;
+}
+.popup__bg-category3.active {
+	opacity: 1; 
+	pointer-events: all; 
+	transition: 0.5s all;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	background-color: rgb(251 251 251 0.5);
+	display: block;
+}
+.popup__bg-category4.active {
+	opacity: 1; 
+	pointer-events: all; 
+	transition: 0.5s all;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	background-color: rgb(251 251 251 0.5);
+	display: block;
+}
+
+.popup-category {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	margin-top: -50px;
+	margin-left: -60px;
+}
+
+.popup-category2{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	margin-top: 15px;
+	margin-top: -50px;
+	margin-left: -60px;
+}
+.popup-category3{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	margin-top: 15px;
+	margin-top: -50px;
+	margin-left: -60px;
+}
+.popup-category4{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	margin-top: 15px;
+	margin-top: -50px;
+	margin-left: -60px;
+}
+
+.popup-category-first-text {
+	width: 100px;
+	height: 30px;
+	z-index: 100;
+	display: flex;
+	background-color: #f2f2f2;
+	border-radius: 20px;
+	align-items: center;
+	padding: 0 0 0 20px;
+}
+
+.popup-category-second-text {
+	width: 100px;
+	height: 30px;
+	z-index: 100;
+	display: flex;
+	background-color: #f2f2f2;
+	border-radius: 20px;
+	align-items: center;
+	padding: 0 0 0 20px;
+}
+
+.popup-category-third-text {
+	width: 100px;
+	height: 30px;
+	z-index: 100;
+	display: flex;
+	background-color: #f2f2f2;
+	border-radius: 20px;
+	align-items: center;
+	padding: 0 0 0 20px;
+}
+
+.popup-category-fourty-text {
+	width: 100px;
+	height: 30px;
+	z-index: 100;
+	display: flex;
+	background-color: #f2f2f2;
+	border-radius: 20px;
+	align-items: center;
+	padding: 0 0 0 20px;
 }
