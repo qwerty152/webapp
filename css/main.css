@@ -305,14 +305,12 @@ section.active {
 	flex-direction: column;
 	width: 64px;
 	aspect-ratio: 1;
-	background-color: #ECF9ED;
 	border-radius: 16px;
 	transition: 0.3s ease-in-out;
 }
 
 .docs__img{
-	width: 28px;
-	height: 28px;
+
 }
 
 .home__row-docs-name{
@@ -338,7 +336,6 @@ section.active {
 	flex-direction: column;
 	width: 64px;
 	aspect-ratio: 1;
-	background-color: #ECF3F9;
 	border-radius: 16px;
 	transition: 0.3s ease-in-out;
 }
