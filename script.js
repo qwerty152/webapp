@@ -389,4 +389,17 @@ openPopupButtonsCt4.forEach((button) => { // Перебираем все кно�
 
 
 
+// DELETE Function
+
+function deleteFile(fileId) {  
+	// Получаем элемент по его ID  
+	var fileElement = document.getElementById(fileId);  
+	
+	// Устанавливаем стиль display: none для скрытия элемента  
+	if (fileElement) {  
+		 fileElement.style.display = 'none';  
+	}  
+}  
+
+
 
