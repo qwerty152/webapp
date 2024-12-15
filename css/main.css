@@ -580,7 +580,7 @@ section.active {
 .active__btn{
 	transform: scale(1.2);
 	transition: 0.3s ;
-	filter: brightness(0) saturate(100%) invert(19%) sepia(100%) saturate(5143%) hue-rotate(243deg) brightness(100%) contrast(111%);
+	filter: brightness(0) saturate(100%) invert(96%) sepia(100%) saturate(7190%) hue-rotate(192deg) brightness(81%) contrast(92%);
 }
 
 .menu.show {  
