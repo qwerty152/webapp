@@ -386,6 +386,9 @@ function deleteFile(fileId) {
 	
 	// Устанавливаем стиль display: none для скрытия элемента  
 	if (fileElement) {  
+		if ("vibrate" in navigator) {  
+			navigator.vibrate(200); // Вибрация на 200 миллисекунд  
+	  }  
 		 fileElement.style.display = 'none';  
 	}  
 }  
