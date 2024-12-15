@@ -196,7 +196,7 @@ changePhrases();
 
 // SEARCH
 
-ddocument.getElementById('searchButton').addEventListener('click', function() {  
+document.getElementById('searchButton').addEventListener('click', function() {  
 	const header = document.getElementById('home__title');  
 	const section = document.getElementById('searchInput');  
 	const searchInput = document.getElementById('searchInput');  
@@ -310,24 +310,24 @@ const plans = [
 	{ size: "+ 1 GB", price: "0.15 USDT / mo" },  
 	{ size: "+ 4 GB", price: "0.45 USDT / mo" },  
 	{ size: "+ 8 GB", price: "1.2 USDT / mo" },  
-	{ size: "+ 64 GB", price: "9.6 USDT / mo" },   
-	{ size: "+ 128 GB", price: "12 USDT / mo" },   
-	{ size: "+ 256 GB", price: "14 USDT / mo" },   
-	{ size: "+ 512 GB", price: "16 USDT / mo" },   
-	{ size: "+ 1 TB", price: "17 USDT / mo" },   
+	{ size: "+ 64 GB", price: "9.6 USDT / mo" }, 
+	{ size: "+ 128 GB", price: "12 USDT / mo" }, 
+	{ size: "+ 256 GB", price: "14 USDT / mo" }, 
+	{ size: "+ 512 GB", price: "16 USDT / mo" }, 
+	{ size: "+ 1 TB", price: "17 USDT / mo" }, 
 ];  
 
 let currentPlanIndex = 0;  
 
 document.getElementById('upgrade-button').addEventListener('click', () => {  
-	// Вибрация устройства при нажатии кнопки  
 	if (navigator.vibrate) {  
-		 navigator.vibrate(100); // Вибрация на 100 миллисекунд  
-	}  
-
+				 navigator.vibrate(100); // Вибрация на 100 миллисекунд  
+			}  
 	currentPlanIndex = (currentPlanIndex + 1) % plans.length; // Циклический переход  
 	document.getElementById('storage-text').innerText = `${plans[currentPlanIndex].size} = ${plans[currentPlanIndex].price}`;  
-});
+}); 
+
+
 
 
 
