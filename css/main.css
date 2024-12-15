@@ -460,6 +460,7 @@ section.active {
 .home__file-name {
 	margin-left: 16px;
 	display: flex;
+	margin-right: 51px;
 	flex-direction: column;
 }
 
@@ -480,7 +481,7 @@ section.active {
 }
 
 .home__file-tritochki {
-	margin-left: 51px;
+	
 }
 
 /* MENU */
