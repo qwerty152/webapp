@@ -573,11 +573,11 @@ section.active {
 }
 
 .menu__btn:active{
-	filter: brightness(0) saturate(100%) invert(28%) sepia(52%) saturate(4771%) hue-rotate(246deg) brightness(101%) contrast(98%);
+	filter: none;
 }
 
 .menu__btn:hover{
-	filter: brightness(0) saturate(100%) invert(28%) sepia(52%) saturate(4771%) hue-rotate(246deg) brightness(101%) contrast(98%);
+	filter: none;
 }
 
 .menu.active{
@@ -589,7 +589,7 @@ section.active {
 	transform: scale(1.2);
 	/* transition: 0.3s ease; */
 	filter: brightness(0) saturate(100%) invert(28%) sepia(52%) saturate(4771%) hue-rotate(246deg) brightness(101%) contrast(98%);
-
+	-webkit-filter: brightness(0) saturate(100%) invert(28%) sepia(52%) saturate(4771%) hue-rotate(246deg) brightness(101%) contrast(98%);
 }
 
 .menu.show {  
