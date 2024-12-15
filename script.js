@@ -38,64 +38,69 @@ function openCity(evt, cityName) {
 }
 
 
-function showSection(sectionId) { 
-	const sections = document.querySelectorAll('.section'); 
-	sections.forEach(section => { 
-		section.classList.remove('active'); }); 
-		const activeSection = document.getElementById(sectionId); 
-		activeSection.classList.add('active');
-	}
+function showSection(sectionId) {   
+	const sections = document.querySelectorAll('.section');   
+	sections.forEach(section => {   
+		section.classList.remove('active');   
+	});   
+	const activeSection = document.getElementById(sectionId);   
+	activeSection.classList.add('active');  
+}  
 
-document.addEventListener('DOMContentLoaded', function() {
-	const boardingSection = document.getElementById('boarding');
-	const homeSection = document.getElementById('home');
-	const menuSection = document.getElementById('menu');
-	
+document.addEventListener('DOMContentLoaded', function() {  
+	const boardingSection = document.getElementById('boarding');  
+	const homeSection = document.getElementById('home');  
+	const menuSection = document.getElementById('menu');  
 
-	
-	function toggleSections(activeSection, inactiveSection) {
-		 inactiveSection.style.display = 'none'; 
-		 activeSection.style.display = 'flex'; 
+	function toggleSections(activeSection, inactiveSection) {  
+		inactiveSection.style.display = 'none';   
+		activeSection.style.display = 'flex';   
+		  
+		// Вибрация при переключении секций  
+		if (navigator.vibrate) {  
+			navigator.vibrate(100); // Вибрация на 100 миллисекунд  
+		}  
 
-		 
-		 setTimeout(() => {
-			  inactiveSection.classList.remove('active');
-			  activeSection.classList.add('active');
-		 }, 10); 
-	}
+		setTimeout(() => {  
+			inactiveSection.classList.remove('active');  
+			activeSection.classList.add('active');  
+		}, 10);   
+	}  
 
-	
-	document.getElementById('boarding__btn').addEventListener('click', function() {
-		 toggleSections(homeSection, boardingSection, menuSection);
-	});
+	document.getElementById('boarding__btn').addEventListener('click', function() {  
+		toggleSections(homeSection, boardingSection);  
+	});  
 
-	
-	document.getElementById('home__btn').addEventListener('click', function() {
-		 toggleSections(boardingSection, homeSection);
-	});
-
-});
-
+	document.getElementById('home__btn').addEventListener('click', function() {  
+		toggleSections(boardingSection, homeSection);  
+	});  
+});  
 
 const toggleButton = document.getElementById('boarding__btn');  
 const menu = document.getElementById('menu');  
 
 toggleButton.addEventListener('click', () => {  
-    if (menu.classList.contains('show')) {  
-        menu.style.transition = 'none'; // Отключаем анимацию для мгновенного скрытия  
-        menu.classList.remove('show'); // Убираем класс, чтобы скрыть меню  
-        // Используем setTimeout, чтобы дождаться завершения предыдущей анимации  
-        setTimeout(() => {  
-            menu.style.display = 'none'; // Скрываем меню после анимации  
-        }, 300); // Время соответствует продолжительности анимации  
-    } else {  
-        menu.style.display = 'flex'; // Показываем меню немедленно  
-        // Небольшая задержка для правильного отображения анимации  
-        setTimeout(() => {  
-            menu.classList.add('show'); // Добавляем класс для анимации  
-        }, 10); // Небольшая задержка для того, чтобы браузер обработал новый display  
-    }  
-});  
+	if (menu.classList.contains('show')) {  
+		menu.style.transition = 'none'; // Отключаем анимацию для мгновенного скрытия  
+		menu.classList.remove('show'); // Убираем класс, чтобы скрыть меню  
+		// Используем setTimeout, чтобы дождаться завершения предыдущей анимации  
+		setTimeout(() => {  
+			menu.style.display = 'none'; // Скрываем меню после анимации  
+		}, 300); // Время соответствует продолжительности анимации  
+	} else {  
+		menu.style.display = 'flex'; // Показываем меню немедленно  
+
+		// Вибрация при открытии меню  
+		if (navigator.vibrate) {  
+			navigator.vibrate(100); // Вибрация на 100 миллисекунд  
+		}  
+
+		// Небольшая задержка для правильного отображения анимации  
+		setTimeout(() => {  
+			menu.classList.add('show'); // Добавляем класс для анимации  
+		}, 10); // Небольшая задержка для того, чтобы браузер обработал новый display  
+	}  
+});
 
 const texts = [  
 	"<span class='header'>Your files are always secure! 🔒☁️<br><span class='text'>Advanced encryption and cutting-edge protection technologies – full control and complete confidentiality for your data.  </span>",  
@@ -248,25 +253,36 @@ document.getElementById('searchButton3').addEventListener('click', function() {
 // POPUP
 
 
-let popupBg = document.querySelector('.popup__bg'); // Фон попап окна
-let popup = document.querySelector('.popup'); // Само окно
-let openPopupButtons = document.querySelectorAll('.btn__plus'); // Кнопки для показа окна
-let closePopupButton = document.getElementById('btn__plus'); // Кнопка для скрытия окна
+let popupBg = document.querySelector('.popup__bg'); // Фон попап окна  
+let popup = document.querySelector('.popup'); // Само окно  
+let openPopupButtons = document.querySelectorAll('.btn__plus'); // Кнопки для показа окна  
+let closePopupButton = document.getElementById('btn__plus'); // Кнопка для скрытия окна  
 
-openPopupButtons.forEach((button) => { // Перебираем все кнопки
-	button.addEventListener('click', (e) => { // Для каждой вешаем обработчик событий на клик
-		 e.preventDefault(); // Предотвращаем дефолтное поведение браузера
-		 popupBg.classList.toggle('active'); // Добавляем класс 'active' для фона
-		//  popup.classList.add('active'); // И для самого окна
-	})
-});
+openPopupButtons.forEach((button) => { // Перебираем все кнопки  
+    button.addEventListener('click', (e) => { // Для каждой вешаем обработчик событий на клик  
+        e.preventDefault(); // Предотвращаем дефолтное поведение браузера  
+        
+        // Вибрация при открытии попапа  
+        if (navigator.vibrate) {  
+            navigator.vibrate(100); // Вибрация на 100 миллисекунд  
+        }  
+        
+        popupBg.classList.toggle('active'); // Добавляем класс 'active' для фона  
+        popup.classList.add('active'); // И для самого окна  
+    });  
+});  
 
-
-document.addEventListener('click', (e) => { // Вешаем обработчик на весь документ
-	if(e.target === popupBg) { // Если цель клика - фот, то:
-		 popupBg.classList.remove('active'); // Убираем активный класс с фона
-		//  popup.classList.remove('active'); // И с окна
-	}
+document.addEventListener('click', (e) => { // Вешаем обработчик на весь документ  
+    if (e.target === popupBg) { // Если цель клика - фон, то:  
+        
+        // Вибрация при закрытии попапа  
+        if (navigator.vibrate) {  
+            navigator.vibrate(100); // Вибрация на 100 миллисекунд  
+        }  
+        
+        popupBg.classList.remove('active'); // Убираем активный класс с фона  
+        popup.classList.remove('active'); // И с окна  
+    }  
 });
 
 
@@ -294,27 +310,31 @@ document.getElementById('upgrade-button').addEventListener('click', () => {
 
 // CATEGORY
 
-function openCategory(evt, categoryName) {
-	// Declare all variables
-	var i, categoryContent, buttonCategory;
+function openCategory(evt, categoryName) {  
+	// Declare all variables  
+	var i, categoryContent, buttonCategory;  
 
-	// Get all elements with class="tabcontent" and hide them
-	categoryContent = document.getElementsByClassName("category__content");
-	for (i = 0; i < categoryContent.length; i++) {
-		categoryContent[i].style.display = "none";
-	}
+	// Get all elements with class="tabcontent" and hide them  
+	categoryContent = document.getElementsByClassName("category__content");  
+	for (i = 0; i < categoryContent.length; i++) {  
+		 categoryContent[i].style.display = "none";  
+	}  
 
-	// Get all elements with class="tablinks" and remove the class "active"
-	buttonCategory = document.getElementsByClassName("button-category");
-	for (i = 0; i < buttonCategory.length; i++) {
-		buttonCategory[i].className = buttonCategory[i].className.replace(" category__btn-active", "");
-	}
+	// Get all elements with class="tablinks" and remove the class "active"  
+	buttonCategory = document.getElementsByClassName("button-category");  
+	for (i = 0; i < buttonCategory.length; i++) {  
+		 buttonCategory[i].className = buttonCategory[i].className.replace(" category__btn-active", "");  
+	}  
 
-	// Show the current tab, and add an "active" class to the link that opened the tab
-	document.getElementById(categoryName).style.display = "block";
-	evt.currentTarget.className += " category__btn-active";
-}
+	// Show the current tab, and add an "active" class to the link that opened the tab  
+	document.getElementById(categoryName).style.display = "block";  
+	evt.currentTarget.className += " category__btn-active";  
 
+	// Вызов функции вибрации  
+	if (navigator.vibrate) {  
+		 navigator.vibrate(100); // Вибрация на 100 миллисекунд  
+	}  
+} 
 // POPUP CATEGORY
  
 
@@ -329,17 +349,22 @@ let popups = {
 // Функция для закрытия всех попапов  
 function closeAllPopups() {  
 	Object.values(popups).forEach(popup => {  
-		 popup.style.display = 'none'; // Прячем попапы  
+		popup.style.display = 'none'; // Прячем попапы  
 	});  
 }  
 
 // Функция для открытия попапа  
 function togglePopup(popup) {  
 	if (popup.style.display === 'flex') {  
-		 closeAllPopups(); // Закрываем, если попап уже открыт  
+		closeAllPopups(); // Закрываем, если попап уже открыт  
 	} else {  
-		 closeAllPopups(); // Сначала закрываем все попапы  
-		 popup.style.display = 'flex'; // Открываем текущий попап  
+		closeAllPopups(); // Сначала закрываем все попапы  
+		popup.style.display = 'flex'; // Открываем текущий попап  
+		  
+		// Вызов функции вибрации  
+		if (navigator.vibrate) {  
+			navigator.vibrate(100); // Вибрация на 100 миллисекунд  
+		}  
 	}  
 }  
 
@@ -367,15 +392,23 @@ document.querySelector('.btn__tritochki4').addEventListener('click', (e) => {
 // Закрытие попапов при нажатии кнопки закрытия  
 document.querySelectorAll('.close').forEach(button => {  
 	button.addEventListener('click', closeAllPopups);  
+	if (navigator.vibrate) {  
+		navigator.vibrate(100); // Вибрация на 100 миллисекунд  
+  }  
+  
 });  
 
 // Закрытие попапов при клике вне окна  
 document.addEventListener('click', (e) => {  
 	if (!e.target.closest('.popup-category') && e.target.matches('.popup__bg-category, .popup__bg-category2, .popup__bg-category3, .popup__bg-category4')) {  
-		 closeAllPopups();  
-	}  
+		if (navigator.vibrate) {  
+			navigator.vibrate(100); // Вибрация на 100 миллисекунд  
+	  }  
+	  
+	  closeAllPopups();  
+ }   
+		
 });  
-
 
 
 // DELETE Function
@@ -388,9 +421,7 @@ function deleteFile(fileId) {
 	if (fileElement) {  
 		if ("vibrate" in navigator) {  
 			navigator.vibrate(200); // Вибрация на 200 миллисекунд  
-	  } else {  
-			alert("Ваше устройство не поддерживает вибрацию."); // Сообщаем, если не поддерживается  
-	  }
+	  } 
 		 fileElement.style.display = 'none';  
 	}  
 }  
