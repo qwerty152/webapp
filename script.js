@@ -1,8 +1,4 @@
 
-
-
-
-
 const icons = document.querySelectorAll('.menu__btn');  
 icons.forEach(icon => {  
     icon.addEventListener('click', () => {  
