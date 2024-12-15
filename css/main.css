@@ -569,7 +569,7 @@ section.active {
 }  
 
 .menu__btn{
-	transition: transform 0.2s ease;
+	transition: transform 0.3s ease;
 }
 
 .menu.active{
@@ -581,6 +581,7 @@ section.active {
 	transform: scale(1.2);
 	transition: 0.3s ease;
 	filter: brightness(0) saturate(100%) invert(28%) sepia(52%) saturate(4771%) hue-rotate(246deg) brightness(101%) contrast(98%);
+	
 }
 
 .menu.show {  
