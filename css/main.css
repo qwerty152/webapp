@@ -572,14 +572,6 @@ section.active {
 	transition: transform 0.3s ease-in-out;
 }
 
-.menu__btn:active{
-	filter: none;
-}
-
-.menu__btn:hover{
-	filter: none;
-}
-
 .menu.active{
 	display: flex;
 	opacity: 1;
@@ -588,7 +580,7 @@ section.active {
 .active__btn{
 	transform: scale(1.2);
 	/* transition: 0.3s ease; */
-	filter: brightness(0) saturate(100%) invert(28%) sepia(52%) saturate(4771%) hue-rotate(246deg) brightness(101%) contrast(98%);
+	/* filter: brightness(0) saturate(100%) invert(28%) sepia(52%) saturate(4771%) hue-rotate(246deg) brightness(101%) contrast(98%); */
 }
 
 .menu.show {  
