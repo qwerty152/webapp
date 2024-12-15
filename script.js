@@ -1,40 +1,44 @@
 
 const icons = document.querySelectorAll('.menu__btn');  
 icons.forEach(icon => {  
-    icon.addEventListener('click', () => {  
+    icon.addEventListener('click', (evt) => {  
         // Убираем активный класс со всех иконок  
         icons.forEach(i => i.classList.remove('active__btn'));  
         // Добавляем активный класс к кликнутой иконке  
         icon.classList.add('active__btn');  
+
+        // Вибрация устройства при нажатии кнопки  
+        if (navigator.vibrate) {  
+            navigator.vibrate(100); // Вибрация на 100 миллисекунд  
+        }  
     });  
 });  
 
 function openCity(evt, cityName) {  
-	var i, tabcontent, tablinks;  
-	tabcontent = document.getElementsByClassName("menu__content");  
+    var i, tabcontent, tablinks;  
+    tabcontent = document.getElementsByClassName("menu__content");  
 
-	// Скрываем все вкладки  
-	for (i = 0; i < tabcontent.length; i++) {  
-		 tabcontent[i].classList.remove("active"); 
-		 tabcontent[i].style.display = "none"; 
-	}  
+    // Скрываем все вкладки  
+    for (i = 0; i < tabcontent.length; i++) {  
+         tabcontent[i].classList.remove("active");   
+         tabcontent[i].style.display = "none";   
+    }  
 
-	// Удаляем класс 'active' у всех кнопок  
-	tablinks = document.getElementsByClassName("menu__btn");  
-	for (i = 0; i < tablinks.length; i++) {  
-		 tablinks[i].classList.remove("active");  
-	}  
+    // Удаляем класс 'active' у всех кнопок  
+    tablinks = document.getElementsByClassName("menu__btn");  
+    for (i = 0; i < tablinks.length; i++) {  
+         tablinks[i].classList.remove("active");  
+    }  
 
-	
-	var currentTab = document.getElementById(cityName);  
-	if (currentTab) {   
-		 currentTab.style.display = "block";
-		 setTimeout(() => {  
-			  currentTab.classList.add("active"); 
-		 }, 10); 
-	}  
- 
-	evt.currentTarget.classList.add("active ");  
+    var currentTab = document.getElementById(cityName);  
+    if (currentTab) {   
+         currentTab.style.display = "block";  
+         setTimeout(() => {  
+              currentTab.classList.add("active");   
+         }, 10);   
+    }  
+
+    evt.currentTarget.classList.add("active ");  
 }
 
 
@@ -192,10 +196,15 @@ changePhrases();
 
 // SEARCH
 
-document.getElementById('searchButton').addEventListener('click', function() {  
+ddocument.getElementById('searchButton').addEventListener('click', function() {  
 	const header = document.getElementById('home__title');  
 	const section = document.getElementById('searchInput');  
 	const searchInput = document.getElementById('searchInput');  
+
+	// Вибрация устройства при нажатии кнопки  
+	if (navigator.vibrate) {  
+		 navigator.vibrate(100); // Вибрация на 100 миллисекунд  
+	}  
 
 	if (header.classList.contains('hidden')) {  
 		 header.classList.remove('hidden');  
@@ -208,12 +217,17 @@ document.getElementById('searchButton').addEventListener('click', function() {
 		 searchInput.style.display = 'block';  
 		 setTimeout(() => { searchInput.classList.add('visible'); }, 10); // Показываем с задержкой для анимации  
 	}  
-});
+});  
 
 document.getElementById('searchButton2').addEventListener('click', function() {  
 	const header2 = document.getElementById('home__title2');  
 	const section2 = document.getElementById('searchInput2');  
 	const searchInput2 = document.getElementById('searchInput2');  
+
+	// Вибрация устройства при нажатии кнопки  
+	if (navigator.vibrate) {  
+		 navigator.vibrate(100); // Вибрация на 100 миллисекунд  
+	}  
 
 	if (header2.classList.contains('hidden')) {  
 		 header2.classList.remove('hidden');  
@@ -226,13 +240,17 @@ document.getElementById('searchButton2').addEventListener('click', function() {
 		 searchInput2.style.display = 'block';  
 		 setTimeout(() => { searchInput2.classList.add('visible'); }, 10); // Показываем с задержкой для анимации  
 	}  
-});
-
+});  
 
 document.getElementById('searchButton3').addEventListener('click', function() {  
 	const header3 = document.getElementById('home__title3');  
 	const section3 = document.getElementById('searchInput3');  
 	const searchInput3 = document.getElementById('searchInput3');  
+
+	// Вибрация устройства при нажатии кнопки  
+	if (navigator.vibrate) {  
+		 navigator.vibrate(100); // Вибрация на 100 миллисекунд  
+	}  
 
 	if (header3.classList.contains('hidden')) {  
 		 header3.classList.remove('hidden');  
@@ -292,19 +310,24 @@ const plans = [
 	{ size: "+ 1 GB", price: "0.15 USDT / mo" },  
 	{ size: "+ 4 GB", price: "0.45 USDT / mo" },  
 	{ size: "+ 8 GB", price: "1.2 USDT / mo" },  
-	{ size: "+ 64 GB", price: "9.6 USDT / mo" }, 
-	{ size: "+ 128 GB", price: "12 USDT / mo" }, 
-	{ size: "+ 256 GB", price: "14 USDT / mo" }, 
-	{ size: "+ 512 GB", price: "16 USDT / mo" }, 
-	{ size: "+ 1 TB", price: "17 USDT / mo" }, 
+	{ size: "+ 64 GB", price: "9.6 USDT / mo" },   
+	{ size: "+ 128 GB", price: "12 USDT / mo" },   
+	{ size: "+ 256 GB", price: "14 USDT / mo" },   
+	{ size: "+ 512 GB", price: "16 USDT / mo" },   
+	{ size: "+ 1 TB", price: "17 USDT / mo" },   
 ];  
 
 let currentPlanIndex = 0;  
 
 document.getElementById('upgrade-button').addEventListener('click', () => {  
+	// Вибрация устройства при нажатии кнопки  
+	if (navigator.vibrate) {  
+		 navigator.vibrate(100); // Вибрация на 100 миллисекунд  
+	}  
+
 	currentPlanIndex = (currentPlanIndex + 1) % plans.length; // Циклический переход  
 	document.getElementById('storage-text').innerText = `${plans[currentPlanIndex].size} = ${plans[currentPlanIndex].price}`;  
-}); 
+});
 
 
 
