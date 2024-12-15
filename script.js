@@ -388,7 +388,9 @@ function deleteFile(fileId) {
 	if (fileElement) {  
 		if ("vibrate" in navigator) {  
 			navigator.vibrate(200); // Вибрация на 200 миллисекунд  
-	  }  
+	  } else {  
+			alert("Ваше устройство не поддерживает вибрацию."); // Сообщаем, если не поддерживается  
+	  }
 		 fileElement.style.display = 'none';  
 	}  
 }  
