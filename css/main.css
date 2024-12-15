@@ -11,6 +11,10 @@ html,body,a{
 	background-color: #fbfbfb;
 }
 
+*::selection{
+	color: transparent;
+}
+
 * {
 	margin: 0;
 	padding: 0;
