@@ -107,7 +107,6 @@ toggleButton.addEventListener('click', () => {
 });
 
 const texts = [  
-	"<span class='header'>Your files are always secure! 🔒☁️<br><span class='text'>Advanced encryption and cutting-edge protection technologies – full control and complete confidentiality for your data.  </span>",  
 	"<span class='header'>Blazing speed for your files! ⚡📂</span> <br><span class='text'>Instant uploads and access from anywhere in the world – no more waiting around. </span>",  
 	"<span class='header'> Accessible anytime, anywhere! 📱💻</span> <br><span class='text'>Seamless integration with all your devices and apps – your files are always within reach, even offline. </span>",  
 	"<span class='header'>Storage you can trust</span> 🛡️<br><span class='text'>A triple-layer protection system ensures your files stay safe, no matter what. .</span>",  
@@ -449,5 +448,77 @@ function deleteFile(fileId) {
 	}  
 }  
 
+// MUSIC
+
+// let holdTimeout;  
+// const overlay = document.querySelector('.overlay');  
+// const options = document.querySelector('.options');  
+
+// function startHold(event) {  
+// 	// Предотвращаем выполнение двойного касания  
+// 	event.preventDefault();  
+	
+// 	holdTimeout = setTimeout(() => {  
+// 		 selectedFile = event.currentTarget;  
+		 
+// 		 // Определяем позицию выбранного элемента  
+// 		 const rect = selectedFile.getBoundingClientRect();  
+		 
+// 		 options.style.display = 'block';  
+// 		 overlay.style.display = 'block';  
+// 		 document.querySelector('.container').classList.add('blur');  
+
+// 		 // Позиционируем меню рядом с выбранным элементом  
+// 		 options.style.top = (rect.bottom + window.scrollY) + 'px'; // Снизу элемента  
+// 		 options.style.left = (rect.left + window.scrollX) + 'px';  // Слева от элемента  
+// 	}, 2000);  
+// } 
+
+// function stopHold() {  
+//     clearTimeout(holdTimeout);  
+// }  
+
+// function closeOptions() {  
+//     options.style.display = 'none';  
+//     overlay.style.display = 'none';  
+//     document.querySelector('.container').classList.remove('blur');  
+// }  
+let holdTimeout;  
+const overlay = document.querySelector('.overlay');  
+const options = document.querySelector('.options');  
+
+function startHold(event) {  
+    event.preventDefault();  
+    
+    holdTimeout = setTimeout(() => {  
+        let selectedFile = event.currentTarget;  
+
+        // Определение позиции выбранного элемента  
+        const rect = selectedFile.getBoundingClientRect();  
+        options.style.display = 'block';  
+        overlay.style.display = 'block';  
+        options.style.top = (rect.bottom + window.scrollY) + 'px';  
+        options.style.left = (rect.left + window.scrollX) + 'px';  
+
+        document.querySelector('.container').classList.add('blur');  
+    }, 200);  
+}  
+
+function stopHold() {  
+    clearTimeout(holdTimeout);  
+}  
+
+function closeOptions() {  
+    options.style.display = 'none';  
+    overlay.style.display = 'none';  
+    document.querySelector('.container').classList.remove('blur');  
+}  
+
+// Пример привязки событий  
+document.querySelectorAll('.file.music').forEach(file => {  
+    file.addEventListener('mousedown', startHold);  
+    file.addEventListener('mouseup', stopHold);  
+    file.addEventListener('mouseleave', stopHold); // мешает "срыву" нажатия  
+});
 
 
