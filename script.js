@@ -449,76 +449,72 @@ function deleteFile(fileId) {
 }  
 
 // MUSIC
+  
 
-// let holdTimeout;  
-// const overlay = document.querySelector('.overlay');  
-// const options = document.querySelector('.options');  
 
-// function startHold(event) {  
-// 	// Предотвращаем выполнение двойного касания  
-// 	event.preventDefault();  
-	
-// 	holdTimeout = setTimeout(() => {  
-// 		 selectedFile = event.currentTarget;  
-		 
-// 		 // Определяем позицию выбранного элемента  
-// 		 const rect = selectedFile.getBoundingClientRect();  
-		 
-// 		 options.style.display = 'block';  
-// 		 overlay.style.display = 'block';  
-// 		 document.querySelector('.container').classList.add('blur');  
 
-// 		 // Позиционируем меню рядом с выбранным элементом  
-// 		 options.style.top = (rect.bottom + window.scrollY) + 'px'; // Снизу элемента  
-// 		 options.style.left = (rect.left + window.scrollX) + 'px';  // Слева от элемента  
-// 	}, 2000);  
-// } 
-
-// function stopHold() {  
-//     clearTimeout(holdTimeout);  
-// }  
-
-// function closeOptions() {  
-//     options.style.display = 'none';  
-//     overlay.style.display = 'none';  
-//     document.querySelector('.container').classList.remove('blur');  
-// }  
 let holdTimeout;  
 const overlay = document.querySelector('.overlay');  
 const options = document.querySelector('.options');  
+let selectedFile; // Переменная для хранения выбранного файла  
 
 function startHold(event) {  
     event.preventDefault();  
-    
+
+    selectedFile = event.currentTarget; // Сохраняем ссылку на выбранный файл  
+
+    // Устанавливаем таймер на 2 секунды  
     holdTimeout = setTimeout(() => {  
-        let selectedFile = event.currentTarget;  
+        selectedFile.classList.add('active-music'); // Добавляем класс active-music  
 
         // Определение позиции выбранного элемента  
-        const rect = selectedFile.getBoundingClientRect();  
-        options.style.display = 'block';  
+        options.style.display = 'flex';  
         overlay.style.display = 'block';  
-        options.style.top = (rect.bottom + window.scrollY) + 'px';  
-        options.style.left = (rect.left + window.scrollX) + 'px';  
+
+        // Центрируем меню  
+        const rect = selectedFile.getBoundingClientRect();  
+        const optionsHeight = options.offsetHeight;   
+        const optionsWidth = options.offsetWidth / 2;  
+
+        options.style.top = (rect.top + window.scrollY - optionsHeight) + 'px'; // Снизу элемента  
+        options.style.left = (rect.left + window.scrollX - optionsWidth) + 'px'; // Слева от элемента  
 
         document.querySelector('.container').classList.add('blur');  
-    }, 200);  
+    }, 2000); // Увеличено до 2000 мс (2 секунды)  
 }  
 
-function stopHold() {  
-    clearTimeout(holdTimeout);  
-}  
+
 
 function closeOptions() {  
     options.style.display = 'none';  
     overlay.style.display = 'none';  
     document.querySelector('.container').classList.remove('blur');  
+
+    // Убираем класс active-music у всех элементов  
+    document.querySelectorAll('.file.music.active-music').forEach(file => {  
+        file.classList.remove('active-music');  
+    });  
 }  
 
-// Пример привязки событий  
+function deleteFile() {  
+    if (selectedFile) {  
+        selectedFile.style.display = 'none'; // Удаляем выбранный файл  
+        selectedFile = null; // Обнуляем selectedFile после удаления  
+    }  
+    closeOptions(); // Закрываем опции после клика  
+}  
+
+// Привязка событий к элементам  
 document.querySelectorAll('.file.music').forEach(file => {  
     file.addEventListener('mousedown', startHold);  
     file.addEventListener('mouseup', stopHold);  
-    file.addEventListener('mouseleave', stopHold); // мешает "срыву" нажатия  
-});
+    file.addEventListener('mouseleave', stopHold); // Удаление класса при уходе мыши  
+});  
+
+// Привязка события для кнопки удаления (например, при нажатии на кнопку "Удалить")  
+document.querySelector('.delete-button').addEventListener('click', deleteFile); // Замените '.delete-button' на селектор вашей кнопки
+
+
+
 
 
