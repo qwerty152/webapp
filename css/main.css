@@ -1124,6 +1124,13 @@ display: none;
 	align-items: center;
 	font-style: 12px;
 	font-weight: 500;
+	transition-duration: 2s;
+	
+}
+
+.file:active{
+transform: scale(1.1);
+z-index: 1000;
 }
 
 .file p{
@@ -1139,7 +1146,9 @@ display: none;
 	left: 0;  
 	width: 100%;  
 	height: 100%;  
-	background: rgba(0, 0, 0, 0.5);
+	background-color: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 	display: none;
 }
 
@@ -1157,6 +1166,7 @@ display: none;
 	gap: 8px;
 	flex-direction: column;
 		display: none;
+	
 } 
 
 .options button{
@@ -1165,4 +1175,9 @@ display: none;
 	border-radius: 20px;
 	color: white;
 	font-weight: 500;
+}
+
+.active-music{
+	transform: scale(1.1);
+	z-index: 1000;
 }
