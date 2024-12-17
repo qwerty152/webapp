@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
-html,body,a{
+html,body{
 	font-family: "Manrope", sans-serif;
 	font-weight: 400;
 	/* height: 100%; */
 	margin: 0;
 	padding: 0;
-	overflow-x: hidden;
 	box-sizing: border-box;
+	overflow-x: hidden;
 	background-color: #fbfbfb;
 }
 
@@ -24,7 +24,6 @@ section{
 
 .container{
 	width: 311px;
-	/* height: 100vh; */
 	margin: 0 auto;
 }
 
@@ -294,7 +293,8 @@ section.active {
 	align-items: center;
 	justify-content: center;
 	position: sticky;
-	top: 100px;
+	top: 0px;
+	
 }
 
 .home__row-docs {	
@@ -425,6 +425,14 @@ section.active {
 
 
 .img-category-content{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	margin-top: 10px;
+	margin-bottom: 300px;
+}
+
+.video-category-content{
 	display: flex;
 	flex-wrap: wrap;
 	gap: 15px;
@@ -1181,3 +1189,79 @@ z-index: 1000;
 	transform: scale(1.1);
 	z-index: 1000;
 }
+
+/* VIDEO */
+
+.video-img-1{
+	position: relative;
+}
+
+.video-img-1::after{
+content: url('../img/home/category/player.svg');
+position: absolute;
+top: 56px;
+left: 57px;
+opacity: 90%;
+}
+
+.video-img-3{
+	position: relative;
+}
+
+.video-img-3::after{
+content: url('../img/home/category/player.svg');
+position: absolute;
+top: 56px;
+left: 57px;
+opacity: 90%;
+}
+
+.video-img-2{
+	position: relative;
+}
+
+.video-img-2::after{
+content: url('../img/home/category/player.svg');
+position: absolute;
+top: 56px;
+left: 57px;
+opacity: 90%;
+}
+
+.video-img-4{
+	position: relative;
+}
+
+.video-img-4::after{
+content: url('../img/home/category/player.svg');
+position: absolute;
+top: 56px;
+left: 57px;
+opacity: 90%;
+}
+
+.video-img-5{
+	position: relative;
+}
+
+.video-img-5::after{
+content: url('../img/home/category/player.svg');
+position: absolute;
+top: 56px;
+left: 57px;
+opacity: 90%;
+}
+
+.video-img-6{
+	position: relative;
+}
+
+.video-img-6::after{
+content: url('../img/home/category/player.svg');
+position: absolute;
+top: 56px;
+left: 57px;
+opacity: 90%;
+}
+
+
