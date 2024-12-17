@@ -453,11 +453,74 @@ function deleteFile(fileId) {
 
 
 
+// let holdTimeout;  
+// const overlay = document.querySelector('.overlay');  
+// const options = document.querySelector('.options');  
+// let selectedFile; // Переменная для хранения выбранного файла  
+
+// function startHold(event) {  
+//     event.preventDefault();  
+
+//     selectedFile = event.currentTarget; // Сохраняем ссылку на выбранный файл  
+
+//     // Устанавливаем таймер на 2 секунды  
+//     holdTimeout = setTimeout(() => {  
+//         selectedFile.classList.add('active-music'); // Добавляем класс active-music  
+
+//         // Определение позиции выбранного элемента  
+//         options.style.display = 'flex';  
+//         overlay.style.display = 'block';  
+
+//         // Центрируем меню  
+//         const rect = selectedFile.getBoundingClientRect();  
+//         const optionsHeight = options.offsetHeight;   
+//         const optionsWidth = options.offsetWidth / 2;  
+
+//         options.style.top = (rect.top + window.scrollY - optionsHeight) + 'px'; // Снизу элемента  
+//         options.style.left = (rect.left + window.scrollX - optionsWidth) + 'px'; // Слева от элемента  
+
+//         document.querySelector('.container').classList.add('blur');  
+//     }, 2000); // Увеличено до 2000 мс (2 секунды)  
+// }  
+
+
+
+// function closeOptions() {  
+//     options.style.display = 'none';  
+//     overlay.style.display = 'none';  
+//     document.querySelector('.container').classList.remove('blur');  
+
+//     // Убираем класс active-music у всех элементов  
+//     document.querySelectorAll('.file.music.active-music').forEach(file => {  
+//         file.classList.remove('active-music');  
+//     });  
+// }  
+
+// function deleteFile() {  
+//     if (selectedFile) {  
+//         selectedFile.style.display = 'none'; // Удаляем выбранный файл  
+//         selectedFile = null; // Обнуляем selectedFile после удаления  
+//     }  
+//     closeOptions(); // Закрываем опции после клика  
+// }  
+
+// // Привязка событий к элементам  
+// document.querySelectorAll('.file.music').forEach(file => {  
+//     file.addEventListener('mousedown', startHold);  
+//     file.addEventListener('mouseup', stopHold);  
+//     file.addEventListener('mouseleave', stopHold); // Удаление класса при уходе мыши  
+// });  
+
+// // Привязка события для кнопки удаления (например, при нажатии на кнопку "Удалить")  
+// document.querySelector('.delete-button').addEventListener('click', deleteFile); // Замените '.delete-button' на селектор вашей кнопки
+
+
 let holdTimeout;  
 const overlay = document.querySelector('.overlay');  
 const options = document.querySelector('.options');  
 let selectedFile; // Переменная для хранения выбранного файла  
 
+// Функция, вызываемая при начале зажатия  
 function startHold(event) {  
     event.preventDefault();  
 
@@ -465,7 +528,8 @@ function startHold(event) {
 
     // Устанавливаем таймер на 2 секунды  
     holdTimeout = setTimeout(() => {  
-        selectedFile.classList.add('active-music'); // Добавляем класс active-music  
+        // Добавляем класс active-music и показываем опции только после 2 секунд зажатия  
+        selectedFile.classList.add('active-music');  
 
         // Определение позиции выбранного элемента  
         options.style.display = 'flex';  
@@ -480,11 +544,23 @@ function startHold(event) {
         options.style.left = (rect.left + window.scrollX - optionsWidth) + 'px'; // Слева от элемента  
 
         document.querySelector('.container').classList.add('blur');  
-    }, 2000); // Увеличено до 2000 мс (2 секунды)  
+    }, 2000); // Задержка в 2000 мс (2 секунды)  
 }  
 
+// Функция, вызываемая при окончании зажатия  
+function stopHold() {  
+    clearTimeout(holdTimeout); // Отменяем таймер, если зажатие остановлено  
 
+    // Убираем класс active-music, если он установлен  
+    if (selectedFile) {  
+        selectedFile.classList.remove('active-music');  
+    }  
 
+    // Закрываем опции, если они открыты  
+    closeOptions();  
+}  
+
+// Закрытие меню  
 function closeOptions() {  
     options.style.display = 'none';  
     overlay.style.display = 'none';  
@@ -496,6 +572,7 @@ function closeOptions() {
     });  
 }  
 
+// Функция удаления файла  
 function deleteFile() {  
     if (selectedFile) {  
         selectedFile.style.display = 'none'; // Удаляем выбранный файл  
@@ -506,15 +583,10 @@ function deleteFile() {
 
 // Привязка событий к элементам  
 document.querySelectorAll('.file.music').forEach(file => {  
-    file.addEventListener('mousedown', startHold);  
-    file.addEventListener('mouseup', stopHold);  
-    file.addEventListener('mouseleave', stopHold); // Удаление класса при уходе мыши  
+    file.addEventListener('touchstart', startHold);  
+    file.addEventListener('touchend', stopHold);  
+    file.addEventListener('touchcancel', stopHold); // Удаление класса при отмене касания  
 });  
 
 // Привязка события для кнопки удаления (например, при нажатии на кнопку "Удалить")  
 document.querySelector('.delete-button').addEventListener('click', deleteFile); // Замените '.delete-button' на селектор вашей кнопки
-
-
-
-
-
