@@ -459,6 +459,7 @@ function deleteFile(fileId) {
 // let selectedFile; // Переменная для хранения выбранного файла  
 
 // function startHold(event) {  
+
 //     event.preventDefault();  
 
 //     selectedFile = event.currentTarget; // Сохраняем ссылку на выбранный файл  
@@ -514,61 +515,156 @@ function deleteFile(fileId) {
 // // Привязка события для кнопки удаления (например, при нажатии на кнопку "Удалить")  
 // document.querySelector('.delete-button').addEventListener('click', deleteFile); // Замените '.delete-button' на селектор вашей кнопки
 
+// let holdTimeout;  
+// const overlay = document.querySelector('.overlay');  
+// const options = document.querySelector('.options');  
+// let selectedFile; // Переменная для хранения выбранного файла  
+
+// // Флаг, чтобы отслеживать, произошло ли удерживание  
+// let isHolding = false;  
+
+// // Функция, вызываемая при начале зажатия  
+// function startHold(event) {  
+//     // Устанавливаем флаг в true  
+//     isHolding = true;  
+//     event.preventDefault();  
+
+//     selectedFile = event.currentTarget; // Сохраняем ссылку на выбранный файл  
+
+//     // Устанавливаем таймер на 2 секунды  
+//     holdTimeout = setTimeout(() => {  
+//         if (isHolding) { // Проверяем, удерживается ли элемент всё еще  
+//             selectedFile.classList.add('active-music'); // Добавляем класс active-music  
+
+//             // Определение позиции выбранного элемента  
+//             options.style.display = 'flex';  
+//             overlay.style.display = 'block';  
+
+//             // Центрируем меню  
+//             const rect = selectedFile.getBoundingClientRect();  
+//             const optionsHeight = options.offsetHeight;  
+//             const optionsWidth = options.offsetWidth / 2;  
+
+//             options.style.top = (rect.top + window.scrollY - optionsHeight) + 'px'; // Снизу элемента  
+//             options.style.left = (rect.left + window.scrollX - optionsWidth) + 'px'; // Слева от элемента  
+
+//             document.querySelector('.container').classList.add('blur');  
+//         }  
+//     }, 2000); // Задержка в 2000 мс (2 секунды)  
+// }  
+
+// // Функция, вызываемая при окончании зажатия  
+// function stopHold() {  
+//     clearTimeout(holdTimeout); // Отменяем таймер, если зажатие остановлено  
+//     isHolding = false; // Устанавливаем флаг в false  
+
+//     // Убираем класс active-music, если он установлен  
+//     if (selectedFile) {  
+//         selectedFile.classList.remove('active-music');  
+//     }  
+
+//     // Здесь мы оставляем меню открытым, если оно уже было открыто  
+//     // Закрываем опции, если они открыты, только по определенному условию  
+// }  
+
+// // Закрытие меню  
+// function closeOptions() {  
+//     options.style.display = 'none';  
+//     overlay.style.display = 'none';  
+//     document.querySelector('.container').classList.remove('blur');  
+
+//     // Убираем класс active-music у всех элементов  
+//     document.querySelectorAll('.file.music.active-music').forEach(file => {  
+//         file.classList.remove('active-music');  
+//     });  
+// }  
+
+// // Функция удаления файла  
+// function deleteFile() {  
+//     if (selectedFile) {  
+//         selectedFile.style.display = 'none'; // Удаляем выбранный файл  
+//         selectedFile = null; // Обнуляем selectedFile после удаления  
+//     }  
+//     closeOptions(); // Закрываем опции после клика  
+// }  
+
+// // Привязка событий к элементам  
+// document.querySelectorAll('.file.music').forEach(file => {  
+//     file.addEventListener('touchstart', startHold);  
+//     file.addEventListener('touchend', stopHold);  
+//     file.addEventListener('touchcancel', stopHold); // Удаление класса при отмене касания  
+// });  
+
+// // Привязка события для кнопки удаления (например, при нажатии на кнопку "Удалить")  
+// document.querySelector('.delete-button').addEventListener('click', deleteFile); // Замените '.delete-button' на селектор вашей кнопки  
+
+// // Добавление обработчиков для закрытия меню опций  
+// overlay.addEventListener('click', closeOptions); // Закрыть меню при нажатии на оверлей  
+// options.addEventListener('click', (event) => {  
+//     event.stopPropagation(); // Остановить всплытие события, чтобы меню не закрывалось, если пользователь кликает внутри него  
+// });
+
 
 let holdTimeout;  
 const overlay = document.querySelector('.overlay');  
 const options = document.querySelector('.options');  
 let selectedFile; // Переменная для хранения выбранного файла  
 
+// Флаг, чтобы отслеживать, произошло ли удерживание  
+let isHolding = false;  
+
 // Функция, вызываемая при начале зажатия  
 function startHold(event) {  
+    // Устанавливаем флаг в true  
+    isHolding = true;  
     event.preventDefault();  
 
     selectedFile = event.currentTarget; // Сохраняем ссылку на выбранный файл  
 
     // Устанавливаем таймер на 2 секунды  
     holdTimeout = setTimeout(() => {  
-        // Добавляем класс active-music и показываем опции только после 2 секунд зажатия  
-        selectedFile.classList.add('active-music');  
+        if (isHolding) { // Проверяем, удерживается ли элемент всё еще  
+            selectedFile.classList.add('active-music'); // Добавляем класс active-music  
 
-        // Определение позиции выбранного элемента  
-        options.style.display = 'flex';  
-        overlay.style.display = 'block';  
+            // Определение позиции выбранного элемента  
+            options.style.display = 'flex';  
+            overlay.style.display = 'block';  
 
-        // Центрируем меню  
-        const rect = selectedFile.getBoundingClientRect();  
-        const optionsHeight = options.offsetHeight;   
-        const optionsWidth = options.offsetWidth / 2;  
+            // Центрируем меню  
+            const rect = selectedFile.getBoundingClientRect();  
+            const optionsHeight = options.offsetHeight;  
+            const optionsWidth = options.offsetWidth / 2;  
 
-        options.style.top = (rect.top + window.scrollY - optionsHeight) + 'px'; // Снизу элемента  
-        options.style.left = (rect.left + window.scrollX - optionsWidth) + 'px'; // Слева от элемента  
+            options.style.top = (rect.top + window.scrollY - optionsHeight) + 'px'; // Снизу элемента  
+            options.style.left = (rect.left + window.scrollX - optionsWidth) + 'px'; // Слева от элемента  
 
-        document.querySelector('.container').classList.add('blur');  
+            document.querySelector('.container').classList.add('blur');  
+        }  
     }, 2000); // Задержка в 2000 мс (2 секунды)  
 }  
 
 // Функция, вызываемая при окончании зажатия  
 function stopHold() {  
     clearTimeout(holdTimeout); // Отменяем таймер, если зажатие остановлено  
-
-    // Убираем класс active-music, если он установлен  
-    if (selectedFile) {  
-        selectedFile.classList.remove('active-music');  
-    }  
-
-    // Закрываем опции, если они открыты  
-    closeOptions();  
+    isHolding = false; // Устанавливаем флаг в false, но не убираем класс active-music  
 }  
 
-// Закрытие меню  
+// Закрытие меню и удаление класса active-music  
 function closeOptions() {  
     options.style.display = 'none';  
     overlay.style.display = 'none';  
     document.querySelector('.container').classList.remove('blur');  
 
-    // Убираем класс active-music у всех элементов  
+    // Убираем класс active-music с выбранного элемента  
+    if (selectedFile) {  
+        selectedFile.classList.remove('active-music');  
+    }  
+    
+    // Убираем класс active-music у всех остальных элементов  
     document.querySelectorAll('.file.music.active-music').forEach(file => {  
-        file.classList.remove('active-music');  
+        if (file !== selectedFile) {  
+            file.classList.remove('active-music');  
+        }  
     });  
 }  
 
@@ -576,6 +672,7 @@ function closeOptions() {
 function deleteFile() {  
     if (selectedFile) {  
         selectedFile.style.display = 'none'; // Удаляем выбранный файл  
+        selectedFile.classList.remove('active-music'); // Убираем класс active-music при удалении  
         selectedFile = null; // Обнуляем selectedFile после удаления  
     }  
     closeOptions(); // Закрываем опции после клика  
@@ -589,4 +686,10 @@ document.querySelectorAll('.file.music').forEach(file => {
 });  
 
 // Привязка события для кнопки удаления (например, при нажатии на кнопку "Удалить")  
-document.querySelector('.delete-button').addEventListener('click', deleteFile); // Замените '.delete-button' на селектор вашей кнопки
+document.querySelector('.delete-button').addEventListener('click', deleteFile); // Замените '.delete-button' на селектор вашей кнопки  
+
+// Добавление обработчиков для закрытия меню опций  
+overlay.addEventListener('click', closeOptions); // Закрыть меню при нажатии на оверлей  
+options.addEventListener('click', (event) => {  
+    event.stopPropagation(); // Остановить всплытие события, чтобы меню не закрывалось, если пользователь кликает внутри него  
+});
