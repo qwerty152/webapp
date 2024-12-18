@@ -1133,10 +1133,6 @@ display: none;
 	
 }
 
-.file:active{
-transform: scale(1.1);
-z-index: 1000;
-}
 
 .file p{
 	font-style: 12px;
@@ -1165,7 +1161,7 @@ z-index: 1000;
 	position: absolute;  
 	background-color: white;  
 	padding: 10px;  
-	z-index: 15;  
+	z-index: 3000;  
 	border-radius: 5px;  
 	display: flex;
 	gap: 8px;
